@@ -9,7 +9,7 @@
     {{ work.projectDescription }}
   </p>
   <div class="works-card__links">
-    <a href="#" class="primary-button" [routerLink]="work.projectCode"
+    <a [href]="work.projectCode" target="_blank" class="primary-button"
       ><fa-icon class="works-card__icon" [icon]="faGithub"></fa-icon>Source
       code</a
     >
