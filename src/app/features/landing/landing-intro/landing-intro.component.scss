@@ -1,0 +1,84 @@
+@import '../../../../scss/mixins';
+
+.landing-intro {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @include respond(lg) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+    @include respond(lg) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__greet {
+    color: var(--blue);
+    font-family: 'Odibee Sans', cursive;
+    font-size: 5rem;
+  }
+
+  &__my-name {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    font-family: 'Odibee Sans', cursive;
+    font-size: 6rem;
+
+    &-span {
+      color: var(--teal);
+    }
+  }
+
+  &__profession {
+    color: var(--teal);
+    font-family: 'Odibee Sans', cursive;
+    font-size: 4rem;
+  }
+
+  &__wrapper {
+    margin-top: 5rem;
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  &__icon {
+    margin-right: 0.5rem;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+    @include respond(sm) {
+      margin: 7rem 0 0 0;
+    }
+
+    @include respond(lg) {
+      width: 100%;
+      margin: 7rem 0;
+    }
+  }
+
+  &__illustration {
+    width: 60%;
+
+    @include respond(md) {
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<div class="todo-list">
+  <h1 class="todo-list__header">Todo List</h1>
+  <div class="todo-list__container">
+    <div class="todo-list__lists">
+      <h2 class="todo-list__lists__header">Lists</h2>
+      <div
+        class="todo-list__lists__list"
+        [@fadeInAnimation]
+        (click)="todoListService.selectList(list)"
+        *ngFor="let list of todoLists">
+        <knb-portfolio-todo-list-card
+          (editEvent)="onEdit($event)"
+          cardType="list"
+          [data]="list"></knb-portfolio-todo-list-card>
+      </div>
+      <form
+        class="todo-list__lists__add-list"
+        [formGroup]="addListForm"
+        (ngSubmit)="addList()">
+        <input
+          formControlName="listName"
+          type="text"
+          class="todo-list__lists__add-list__input"
+          placeholder="Add list..." />
+        <button
+          class="todo-list__lists__add-list__button"
+          type="submit"
+          [disabled]="!addListForm.get('listName').valid">
+          <fa-icon
+            class="todo-list__lists__add-list__button-icon"
+            [icon]="faPlus"></fa-icon>
+        </button>
+      </form>
+    </div>
+    <div class="todo-list__tasks">
+      <p class="todo-list__tasks__no-list" *ngIf="!selectedList">
+        Lists not yet added? Create one first.
+      </p>
+      <div *ngIf="selectedList">
+        <h2 class="todo-list__tasks__header">Tasks</h2>
+        <div
+          class="todo-list__tasks__task"
+          [@fadeInAnimation]
+          *ngFor="let task of selectedList.tasks">
+          <knb-portfolio-todo-list-card
+            (editEvent)="onEdit($event)"
+            cardType="task"
+            [data]="task"></knb-portfolio-todo-list-card>
+        </div>
+        <form
+          class="todo-list__tasks__add-task"
+          [formGroup]="addTaskForm"
+          (ngSubmit)="addTask()">
+          <input
+            formControlName="taskName"
+            type="text"
+            class="todo-list__tasks__add-task__input"
+            placeholder="Add task..." />
+          <button
+            class="todo-list__tasks__add-task__button"
+            type="submit"
+            [disabled]="!addTaskForm.get('taskName').valid">
+            <fa-icon
+              class="todo-list__tasks__add-task__button-icon"
+              [icon]="faPlus"></fa-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<knb-portfolio-modal>
+  <form [formGroup]="editForm" (ngSubmit)="editItem()" class="edit">
+    <h1 class="edit__title">Edit item</h1>
+    <input
+      formControlName="editedName"
+      type="text"
+      class="edit__input"
+      #editInput />
+    <button class="edit__submit primary-button" type="submit">Submit</button>
+    <button
+      class="edit__close secondary-button"
+      (click)="modalService.toggleModal()">
+      Cancel
+    </button>
+  </form>
+</knb-portfolio-modal>

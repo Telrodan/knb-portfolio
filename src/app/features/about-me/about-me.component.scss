@@ -1,0 +1,27 @@
+@import '../../../scss/mixins';
+
+.wrapper {
+  position: relative;
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 10px;
+    color: var(--text);
+    border: 2px dotted var(--teal);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    direction: rtl;
+
+    @include respond(sm) {
+      top: 2rem;
+      letter-spacing: 1px;
+      writing-mode: horizontal-tb;
+    }
+  }
+}

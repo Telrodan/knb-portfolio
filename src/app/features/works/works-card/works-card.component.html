@@ -1,0 +1,25 @@
+<article class="works-card">
+  <h1 class="works-card__title">{{ work.projectTitle }}</h1>
+
+  <img
+    class="works-card__image"
+    [src]="'../../../../assets/images/works/' + work.projectImage"
+    alt="Work image" />
+  <p class="works-card__description">
+    {{ work.projectDescription }}
+  </p>
+  <div class="works-card__links">
+    <a href="#" class="primary-button" [routerLink]="work.projectCode"
+      ><fa-icon class="works-card__icon" [icon]="faGithub"></fa-icon>Source
+      code</a
+    >
+    <a
+      href="#"
+      class="secondary-button"
+      routerLink="demo/todo-list"
+      [routerLink]="work.projectDemo"
+      ><fa-icon class="works-card__icon" [icon]="faDisplay"></fa-icon>Live
+      demo</a
+    >
+  </div>
+</article>

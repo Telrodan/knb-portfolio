@@ -1,0 +1,17 @@
+<div *ngIf="confirmationModalService.isOpen" class="confirmation-modal">
+  <div class="confirmation-modal__content">
+    <h1 class="confirmation-modal__title">{{ title }}</h1>
+    <p class="confirmation-modal__message">{{ message }}</p>
+    <div class="confirmation-modal__actions">
+      <button class="confirmation-modal__confirm" (click)="onConfirm()">
+        Confirm
+      </button>
+      <button class="confirmation-modal__cancel" (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </div>
+  <button class="confirmation-modal__close" (click)="onClose()">
+    <fa-icon [icon]="faXmark"></fa-icon>
+  </button>
+</div>

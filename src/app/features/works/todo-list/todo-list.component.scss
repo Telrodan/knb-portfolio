@@ -1,0 +1,247 @@
+@import '../../../../scss/mixins';
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--surface);
+
+  @include respond(sm) {
+    padding-top: 4rem;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+    color: var(--teal);
+    font-size: 5rem;
+    letter-spacing: 2px;
+    font-family: 'Odibee Sans', cursive;
+  }
+
+  &__container {
+    display: flex;
+    width: 70%;
+    min-height: 70rem;
+    padding: 2rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        var(--gradient-1),
+        var(--gradient-2)
+      ),
+      url('./../../../../assets/images/todo-list/todo-list-background.png');
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid var(--teal);
+    border-radius: 10px;
+    box-shadow: 0 0 45px -35px var(--blue);
+
+    @include respond(sm) {
+      flex-direction: column;
+      width: 90%;
+    }
+  }
+
+  &__lists {
+    position: relative;
+    width: 25%;
+    padding: 0 1rem;
+    border-right: 1px dashed var(--teal);
+
+    @include respond(sm) {
+      width: 100%;
+      min-height: 20rem;
+      padding-bottom: 5rem;
+      margin-bottom: 1.5rem;
+      border-right: none;
+      border-bottom: 1px dashed var(--teal);
+    }
+
+    &__header {
+      margin-bottom: 2rem;
+      color: var(--teal);
+      border-bottom: 1px dashed var(--teal);
+      font-size: 3rem;
+      letter-spacing: 2px;
+      font-family: 'Odibee Sans', cursive;
+      text-align: center;
+    }
+
+    &__list {
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__add-list {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: flex;
+      margin-top: auto;
+      border: 1px dotted var(--teal);
+      transform: translateX(-50%);
+
+      @include respond(sm) {
+        bottom: 1rem;
+      }
+
+      &__input {
+        padding: 1rem 2rem;
+        width: 15rem;
+        color: var(--text);
+        background-color: transparent;
+        border: none;
+        font-size: 1.6rem;
+
+        &::placeholder {
+          color: var(--text);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__button {
+        width: 4rem;
+        color: var(--text);
+        background-color: var(--teal);
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  &__tasks {
+    position: relative;
+    flex: auto;
+    padding: 0 1rem;
+
+    @include respond(sm) {
+      width: 100%;
+      min-height: 20rem;
+      padding-bottom: 5rem;
+      border-right: none;
+    }
+
+    &__no-list {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+
+      @include respond(sm) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__header {
+      margin-bottom: 2rem;
+      color: var(--teal);
+      border-bottom: 1px dashed var(--teal);
+      font-size: 3rem;
+      letter-spacing: 2px;
+      font-family: 'Odibee Sans', cursive;
+      text-align: center;
+    }
+
+    &__task {
+      width: 50%;
+      margin: 0 auto;
+
+      @include respond(sm) {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__add-task {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: flex;
+      margin-top: auto;
+      border: 1px dotted var(--teal);
+      transform: translateX(-50%);
+
+      &__input {
+        padding: 1rem 2rem;
+        width: 15rem;
+        color: var(--text);
+        background-color: transparent;
+        border: none;
+        font-size: 1.6rem;
+
+        &::placeholder {
+          color: var(--text);
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__button {
+        width: 4rem;
+        color: var(--text);
+        background-color: var(--teal);
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 2rem;
+    color: var(--teal);
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  &__input {
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    border: 1px dotted var(--teal);
+    color: var(--text);
+    background-color: transparent;
+    font-size: 1.6rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    margin-bottom: 1rem;
+  }
+
+  &__close {
+  }
+}

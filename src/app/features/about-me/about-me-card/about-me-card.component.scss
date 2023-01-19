@@ -1,0 +1,107 @@
+@import '../../../../scss/mixins';
+
+.about-me-card {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+
+  @include respond(sm) {
+    padding-top: 2rem;
+  }
+
+  @include respond(lg) {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    width: 50%;
+    padding: 5rem;
+
+    @include respond(sm) {
+      padding: 0;
+    }
+
+    @include respond(lg) {
+      width: 100%;
+    }
+
+    .title {
+      margin-bottom: 2.5rem;
+      color: var(--teal);
+      font-family: 'Odibee Sans', cursive;
+      font-size: 6rem;
+
+      &-span {
+        color: var(--text);
+      }
+    }
+
+    .description {
+      color: var(--text);
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+    }
+
+    .button {
+      margin-top: 5rem;
+    }
+
+    .icons {
+      margin-top: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        width: 7rem;
+
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+      }
+
+      &__icon {
+        color: var(--teal);
+      }
+
+      &__icon-img {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-bottom: 0.9rem;
+      }
+
+      &__name {
+        color: var(--text);
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .illustration-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    @include respond(lg) {
+      width: 100%;
+    }
+
+    .illustration {
+      margin-top: 5rem;
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 0 50px -35px var(--blue);
+
+      @include respond(sm) {
+        width: 80%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

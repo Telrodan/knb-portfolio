@@ -1,0 +1,15 @@
+.logo {
+  font-family: 'Odibee Sans', cursive;
+  font-size: 34px;
+  color: var(--teal);
+  animation-name: flashingLetter;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes flashingLetter {
+  100% {
+    color: var(--blue);
+  }
+}

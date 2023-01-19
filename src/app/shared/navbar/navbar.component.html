@@ -1,0 +1,41 @@
+<div class="navbar" *ngIf="!isDemoMode">
+  <knb-portfolio-logo></knb-portfolio-logo>
+  <p class="navbar__hamburger" (click)="toggleNavbar()">
+    <fa-icon class="navbar__hamburger-icon" [icon]="faBars"></fa-icon>
+  </p>
+  <div
+    [@slideInAndOutAnimation]="isNavbarOpen"
+    class="navbar__wrapper"
+    [ngStyle]="{ right: isNavbarOpen ? '0' : '-100%' }">
+    <p class="navbar__close" (click)="toggleNavbar()">
+      <fa-icon class="navbar__close-icon" [icon]="faXmark"></fa-icon>
+    </p>
+    <ul class="navbar__list">
+      <li class="navbar__item">
+        <a routerLink="about-me" class="navbar__link" (click)="toggleNavbar()"
+          >About me</a
+        >
+      </li>
+      <li class="navbar__item">
+        <a routerLink="works" class="navbar__link" (click)="toggleNavbar()"
+          >Works</a
+        >
+      </li>
+      <li class="navbar__item">
+        <a routerLink="contact" class="navbar__link" (click)="toggleNavbar()"
+          >Contact</a
+        >
+      </li>
+    </ul>
+    <div class="navbar__socials">
+      <a
+        href="https://www.linkedin.com/in/bence-keresztes-nagy-aba1a024b/"
+        target="_blank"
+        ><fa-icon class="navbar__icon" [icon]="faLinkedin"></fa-icon
+      ></a>
+      <a href="https://github.com/Telrodan" target="_blank"
+        ><fa-icon class="navbar__icon" [icon]="faGithub"></fa-icon
+      ></a>
+    </div>
+  </div>
+</div>

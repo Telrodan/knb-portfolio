@@ -1,0 +1,19 @@
+<main class="works">
+  <h1
+    class="works__heading primary-heading"
+    data-aos="fade-down"
+    data-aos-duration="500">
+    Web Development Journey: A Showcase of My Skills and Experiences
+  </h1>
+  <div
+    class="works__container"
+    data-aos="zoom-in"
+    data-aos-delay="400"
+    data-aos-duration="500">
+    <knb-portfolio-works-card
+      *ngFor="let work of works"
+      [work]="work"></knb-portfolio-works-card>
+  </div>
+</main>
+
+<a routerLink="demo/todo-list">To-do</a>

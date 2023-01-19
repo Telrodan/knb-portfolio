@@ -1,0 +1,14 @@
+<div class="about-me">
+  <div class="wrapper" [id]="card.section" *ngFor="let card of cardData">
+    <knb-portfolio-about-me-card [data]="card"></knb-portfolio-about-me-card>
+    <a
+      class="scroll-button primary-button-dotted"
+      (click)="scrollToElement(card.scroll)"
+      data-aos="fade-left"
+      data-aos-duration="300"
+      data-aos-delay="900">
+      Scroll
+    </a>
+  </div>
+</div>
+<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

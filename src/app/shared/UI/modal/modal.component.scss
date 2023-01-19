@@ -1,0 +1,38 @@
+@import '../../../../scss/mixins';
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 500;
+
+  &__content {
+    position: relative;
+    padding: 3rem 4rem;
+    background-color: var(--surface);
+    border-radius: 10px;
+    box-shadow: 0 0 10px -4px var(--blue);
+
+    @include respond(sm) {
+      width: 90%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    color: var(--text);
+    background-color: transparent;
+    border: none;
+    font-size: 4rem;
+    cursor: pointer;
+  }
+}

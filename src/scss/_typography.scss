@@ -1,0 +1,23 @@
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+// font-family: 'Odibee Sans', cursive;
+
+html {
+  color: var(--text);
+  font-size: 10px;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+
+  @include respond(sm) {
+    font-size: 7.5px;
+  }
+}
+
+.primary-heading {
+  letter-spacing: 2px;
+  color: var(--teal);
+  font-size: 4rem;
+  font-family: 'Odibee Sans', cursive;
+  font-weight: 400;
+  text-align: center;
+}

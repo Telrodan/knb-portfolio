@@ -1,0 +1,57 @@
+.primary-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: var(--surface);
+  background-color: var(--teal);
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+    color: var(--text);
+  }
+}
+
+.primary-button-dotted {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: var(--text);
+  background-color: transparent;
+  border: 1px dotted var(--teal);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.secondary-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: var(--surface);
+  background-color: var(--blue);
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    color: var(--text);
+  }
+}
+
+.secondary-button-dotted {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: var(--text);
+  background-color: transparent;
+  border: 1px dotted var(--blue);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
