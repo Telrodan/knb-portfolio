@@ -1,6 +1,8 @@
 @import '../../../../scss/mixins';
 
 .works-card {
+  display: flex;
+  flex-direction: column;
   width: 37rem;
   min-height: 70rem;
   padding: 2rem;
@@ -23,16 +25,15 @@
   }
 
   &__description {
-    margin-bottom: 2rem;
     font-size: 1.4rem;
     line-height: 2rem;
     letter-spacing: 0.5px;
   }
 
   &__links {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
   }
 
   &__icon {

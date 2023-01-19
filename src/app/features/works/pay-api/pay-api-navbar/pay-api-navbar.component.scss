@@ -1,0 +1,28 @@
+.pay-api-navbar {
+  display: flex;
+  align-items: center;
+  padding: 4rem 16rem;
+
+  &__logo {
+    margin-right: 4rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 4rem;
+  }
+
+  &__link {
+    color: var(--pay-api-color-juan-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}

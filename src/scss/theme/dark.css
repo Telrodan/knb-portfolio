@@ -1,4 +1,5 @@
 :root {
+  /* PORTFOLIO */
   --font-family: 'Roboto', sans-serif;
   --surface: #1e1e1e;
   --surface-secondary: #414141;
@@ -8,9 +9,17 @@
   --teal-transparent: #30aaa02d;
   --blue-transparent: #4babf541;
   --text: rgba(255, 255, 255, 0.87);
-
   --gradient-1: #1e1e1eec;
   --gradient-2: #414141e0;
+
+  /* PAY API */
+  --pay-api-color-background: #edf3f8;
+  --pay-api-color-dark-pink: #ba4270;
+  --pay-api-color-white: #fbfcfe;
+  --pay-api-color-juan-blue: #36536b;
+  --pay-api-color-light-juan-blue: #6c8294;
+  --pay-api-color-blue: #1b262f;
+  --pay-api-color-pink: #da6d97;
 }
 
 @font-face {

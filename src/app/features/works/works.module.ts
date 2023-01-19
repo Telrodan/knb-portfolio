@@ -11,6 +11,10 @@ import { TodoListCardComponent } from './todo-list/todo-list-card/todo-list-card
 import { SharedModule } from 'src/app/shared/shared.module';
 import { WorksCardComponent } from './works-card/works-card.component';
 import { WorksComponent } from './works.component';
+import { PayApiComponent } from './pay-api/pay-api.component';
+import { PayApiNavbarComponent } from './pay-api/pay-api-navbar/pay-api-navbar.component';
+import { PayApiHomeComponent } from './pay-api/pay-api-home/pay-api-home.component';
+import { PayApiHomeHeroComponent } from './pay-api/pay-api-home/pay-api-home-hero/pay-api-home-hero.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { WorksComponent } from './works.component';
     WorksDemoComponent,
     WorksCardComponent,
     TodoListComponent,
-    TodoListCardComponent
+    TodoListCardComponent,
+    PayApiComponent,
+    PayApiNavbarComponent,
+    PayApiHomeComponent,
+    PayApiHomeHeroComponent
   ],
   imports: [
     SharedModule,

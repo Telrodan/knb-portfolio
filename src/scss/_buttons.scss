@@ -1,3 +1,4 @@
+// PORTFOLIO
 .primary-button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -54,4 +55,46 @@
   border: 1px dotted var(--blue);
   font-size: 1.6rem;
   cursor: pointer;
+}
+
+// PAY-API
+.pay-api-button-primary {
+  padding: 1.3rem 2rem;
+  color: var(--pay-api-color-white);
+  background-color: var(--pay-api-color-dark-pink);
+  border: 0;
+  border-radius: 500px;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.pay-api-button-secondary {
+  padding: 1.3rem 2rem;
+  color: var(--pay-api-color-white);
+  background-color: var(--pay-api-color-blue);
+  border: 1px solid var(--pay-api-color-white);
+  border-radius: 500px;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--pay-api-color-blue);
+    background-color: var(--pay-api-color-white);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
