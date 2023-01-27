@@ -15,6 +15,10 @@ import { PayApiComponent } from './pay-api/pay-api.component';
 import { PayApiNavbarComponent } from './pay-api/pay-api-navbar/pay-api-navbar.component';
 import { PayApiHomeComponent } from './pay-api/pay-api-home/pay-api-home.component';
 import { PayApiHomeHeroComponent } from './pay-api/pay-api-home/pay-api-home-hero/pay-api-home-hero.component';
+import { PayApiWhoWeWorkWithComponent } from './pay-api/pay-api-home/pay-api-who-we-work-with/pay-api-who-we-work-with.component';
+import { PayApiEasyToImplementComponent } from './pay-api/pay-api-home/pay-api-easy-to-implement/pay-api-easy-to-implement.component';
+import { PayApiSimpleUiComponent } from './pay-api/pay-api-home/pay-api-simple-ui/pay-api-simple-ui.component';
+import { TodoListEditComponent } from './todo-list/todo-list-edit/todo-list-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { PayApiHomeHeroComponent } from './pay-api/pay-api-home/pay-api-home-her
     PayApiComponent,
     PayApiNavbarComponent,
     PayApiHomeComponent,
-    PayApiHomeHeroComponent
+    PayApiHomeHeroComponent,
+    PayApiWhoWeWorkWithComponent,
+    PayApiEasyToImplementComponent,
+    PayApiSimpleUiComponent,
+    TodoListEditComponent
   ],
   imports: [
     SharedModule,

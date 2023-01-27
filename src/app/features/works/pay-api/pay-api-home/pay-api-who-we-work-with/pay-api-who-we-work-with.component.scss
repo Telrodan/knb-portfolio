@@ -1,0 +1,42 @@
+.who-we-work-with {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10rem 16rem;
+  margin-bottom: 15rem;
+  background-color: var(--pay-api-color-blue);
+  color: var(--pay-api-color-white);
+  overflow: hidden;
+}
+
+.container {
+  width: 45rem;
+  margin-right: 12rem;
+}
+
+.heading {
+  margin-bottom: 3rem;
+}
+
+.text {
+  margin-bottom: 4rem;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+.icon {
+  filter: invert(0.4);
+}
+
+.background-img {
+  position: absolute;
+  top: -35rem;
+  left: -25rem;
+}

@@ -1,0 +1,58 @@
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-right: 20rem;
+}
+
+.heading {
+  margin-bottom: 5rem;
+}
+
+.group {
+  width: fit-content;
+  background-color: var(--pay-api-color-white);
+  border-radius: 500px;
+  box-shadow: 0 10px 30px #ccc;
+}
+
+.input {
+  padding-left: 2rem;
+  width: 27rem;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+
+  &::placeholder {
+    color: var(--pay-api-color-light-juan-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.contact {
+  margin: 1rem 0 0 2rem;
+  color: var(--pay-api-color-light-juan-blue);
+
+  &-span {
+    font-weight: 700;
+  }
+}
+
+.background-img {
+  top: -30rem;
+  right: -10rem;
+  position: absolute;
+  pointer-events: none;
+}

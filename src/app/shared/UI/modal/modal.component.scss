@@ -12,27 +12,27 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
   z-index: 500;
+}
 
-  &__content {
-    position: relative;
-    padding: 3rem 4rem;
-    background-color: var(--surface);
-    border-radius: 10px;
-    box-shadow: 0 0 10px -4px var(--blue);
+.modal-content {
+  position: relative;
+  padding: 3rem 4rem;
+  background-color: var(--surface);
+  border-radius: 5px;
+  box-shadow: 0 0 5px -2px var(--blue);
 
-    @include respond(sm) {
-      width: 90%;
-    }
+  @include respond(sm) {
+    width: 90%;
   }
+}
 
-  &__close {
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    color: var(--text);
-    background-color: transparent;
-    border: none;
-    font-size: 4rem;
-    cursor: pointer;
-  }
+button {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  color: var(--text);
+  background-color: transparent;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
 }

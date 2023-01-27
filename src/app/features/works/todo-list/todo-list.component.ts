@@ -32,16 +32,13 @@ import { ModalService } from 'src/app/core/services/modal.service';
 export class TodoListComponent implements OnInit, OnDestroy {
   @ViewChild('editInput') public editInput: ElementRef;
   public todoLists: TodoList[];
+  public editedItem: any;
   public selectedList: TodoList;
-  public editedElement: Task | TodoList;
-
   public addListForm: FormGroup;
   public addTaskForm: FormGroup;
-  public editForm: FormGroup;
-
-  public destroy = new Subject();
-
+  public isLoading = true;
   public faPlus = faPlus;
+  private destroy = new Subject();
 
   constructor(
     public todoListService: TodoListService,
@@ -49,26 +46,17 @@ export class TodoListComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit(): void {
-    this.todoLists = this.todoListService.getLists();
-    setTimeout(() => {
-      this.selectedList = this.todoListService.getSelectedList();
-      this.selectList(this.selectedList);
-    }, 5);
-    this.todoListService.todoListsChanges$
+    this.todoListService.getLists();
+    this.createForms();
+
+    this.todoListService
+      .getListUpdatedListener$()
       .pipe(takeUntil(this.destroy))
       .subscribe((todoLists) => {
         this.todoLists = todoLists;
-        this.selectedList = todoLists[0];
-        setTimeout(() => {
-          this.selectList(this.selectedList);
-        }, 5);
+        if (!this.selectedList) this.selectedList = this.todoLists[0];
+        this.isLoading = false;
       });
-    this.todoListService.selectedListChanges$
-      .pipe(takeUntil(this.destroy))
-      .subscribe((todoList) => {
-        this.selectedList = todoList;
-      });
-    this.createForms();
   }
 
   public ngOnDestroy(): void {
@@ -83,54 +71,43 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.addTaskForm = new FormGroup({
       taskName: new FormControl(null, Validators.required)
     });
-    this.editForm = new FormGroup({
-      editedName: new FormControl(null, Validators.required)
-    });
   }
 
   public addList(): void {
     const listName = this.addListForm.value.listName
       .trim()
       .replace(/^\w/, (c: string) => c.toUpperCase());
-    const newList: TodoList = {
-      id: uuidv4(),
-      name: listName,
-      tasks: []
-    };
-    this.todoListService.addList(newList);
-    this.addListForm.reset();
+    if (listName) {
+      this.todoListService.addList(listName);
+      this.addListForm.reset();
+    }
   }
 
   public addTask(): void {
     const taskName = this.addTaskForm.value.taskName
       .trim()
       .replace(/^\w/, (c: string) => c.toUpperCase());
-    const newTask: Task = {
-      listId: this.selectedList.id,
-      id: uuidv4(),
-      checked: false,
-      name: taskName
-    };
-    this.todoListService.addTask(newTask);
-    this.addTaskForm.reset();
+    if (taskName) {
+      const newTask = {
+        listId: this.selectedList.id,
+        checked: false,
+        title: taskName
+      };
+      this.todoListService.addTask(
+        newTask.title,
+        newTask.listId,
+        newTask.checked
+      );
+      this.addTaskForm.reset();
+    }
   }
 
   public selectList(list: TodoList): void {
-    this.todoListService.selectList(list);
+    this.selectedList = list;
   }
 
-  public onEdit(event: Task | TodoList) {
-    this.editedElement = event;
-    this.editInput.nativeElement.value = this.editedElement.name;
-    this.modalService.toggleModal();
-  }
-
-  public editItem(): void {
-    if (this.editForm.dirty) {
-      const newName = this.editForm.value['editedName'];
-      this.editedElement.name = newName;
-    }
-    this.editForm.reset();
+  public onEditItemEvent(editedItem: any) {
+    this.editedItem = { ...editedItem };
     this.modalService.toggleModal();
   }
 }

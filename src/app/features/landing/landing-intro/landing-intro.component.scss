@@ -76,6 +76,8 @@
 
   &__illustration {
     width: 60%;
+    box-shadow: 0 0 50px -35px var(--blue);
+    border-radius: 5px;
 
     @include respond(md) {
       width: 80%;

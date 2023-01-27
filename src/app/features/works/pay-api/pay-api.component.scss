@@ -1,5 +1,8 @@
 .pay-api {
+  max-width: 144rem;
   min-height: 100vh;
+  margin: 0 auto;
   color: var(--pay-api-color-juan-blue);
   background-color: var(--pay-api-color-background);
+  overflow: hidden;
 }

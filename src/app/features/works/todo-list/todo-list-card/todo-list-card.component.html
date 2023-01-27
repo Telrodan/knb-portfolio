@@ -1,31 +1,26 @@
 <div
-  class="todo-list-card"
+  class="card"
   [ngStyle]="{
-    opacity: data?.checked ? '0.3' : '1',
+    opacity: cardData?.checked ? '0.3' : '1',
     background:
-      data === selectedList
+      cardData === selectedList
         ? 'var(--teal-transparent)'
         : 'var(--blue-transparent)',
     border:
-      data === selectedList
+      cardData === selectedList
         ? '1px dotted var(--teal)'
         : '1px dotted var(--blue)'
   }">
-  <p class="todo-list-card__name">{{ data.name }}</p>
-  <div class="todo-list-card__controls">
-    <button
-      class="todo-list-card__button"
-      (click)="onCheckTask(data)"
-      *ngIf="cardType === 'task'">
-      <fa-icon class="todo-list-card__button-icon" [icon]="faCheck"></fa-icon>
+  <p class="card-title">{{ cardData.title }}</p>
+  <div class="controls-container">
+    <button (click)="onCheckTask(cardData)" *ngIf="cardType === 'task'">
+      <fa-icon [icon]="faCheck"></fa-icon>
     </button>
-    <button class="todo-list-card__button" (click)="onEdit(data)">
-      <fa-icon
-        class="todo-list-card__button-icon"
-        [icon]="faPenToSquare"></fa-icon>
+    <button (click)="onEditItem(cardData, cardType)">
+      <fa-icon [icon]="faPenToSquare"></fa-icon>
     </button>
-    <button class="todo-list-card__button" (click)="onDelete(data)">
-      <fa-icon class="todo-list-card__button-icon" [icon]="faTrash"></fa-icon>
+    <button (click)="onDeleteItem(cardData)">
+      <fa-icon [icon]="faTrash"></fa-icon>
     </button>
   </div>
 </div>

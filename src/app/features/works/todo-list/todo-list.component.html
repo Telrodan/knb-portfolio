@@ -1,17 +1,16 @@
-<div class="todo-list">
-  <h1 class="todo-list__header">Todo List</h1>
+<!-- <div class="todo-list">
+  <h1 class="todo-list__header"></h1>
   <div class="todo-list__container">
     <div class="todo-list__lists">
       <h2 class="todo-list__lists__header">Lists</h2>
       <div
         class="todo-list__lists__list"
         [@fadeInAnimation]
-        (click)="todoListService.selectList(list)"
-        *ngFor="let list of todoLists">
-        <knb-portfolio-todo-list-card
-          (editEvent)="onEdit($event)"
-          cardType="list"
-          [data]="list"></knb-portfolio-todo-list-card>
+        (click)="todoListService.selectList(todoList)"
+        *ngFor="let todoList of todoLists">
+        <knb-portfolio-todo-list-list-card
+          (editListEvent)="onEditList($event)"
+          [todoList]="todoList"></knb-portfolio-todo-list-list-card>
       </div>
       <form
         class="todo-list__lists__add-list"
@@ -43,9 +42,9 @@
           [@fadeInAnimation]
           *ngFor="let task of selectedList.tasks">
           <knb-portfolio-todo-list-card
-            (editEvent)="onEdit($event)"
+            (editItem)="onEdit($event)"
             cardType="task"
-            [data]="task"></knb-portfolio-todo-list-card>
+            [cardData]="task"></knb-portfolio-todo-list-card>
         </div>
         <form
           class="todo-list__tasks__add-task"
@@ -69,19 +68,73 @@
     </div>
   </div>
 </div>
+ -->
+<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>
+<main *ngIf="!isLoading">
+  <h1 class="heading">Task manager</h1>
+  <div class="container">
+    <div class="container-left">
+      <h2 class="container-heading">Categories</h2>
+      <div
+        class="wrapper"
+        [@fadeInAnimation]
+        (click)="selectList(todoList)"
+        *ngFor="let todoList of todoLists">
+        <knb-portfolio-todo-list-card
+          (editItem)="onEditItemEvent($event)"
+          cardType="list"
+          [selectedList]="selectedList"
+          [cardData]="todoList"></knb-portfolio-todo-list-card>
+      </div>
+      <form class="add-form" [formGroup]="addListForm" (ngSubmit)="addList()">
+        <input
+          formControlName="listName"
+          type="text"
+          class="add-form-input"
+          placeholder="Add category..." />
+        <button
+          class="add-form-button"
+          type="submit"
+          [disabled]="!addListForm.get('listName').valid">
+          <fa-icon
+            class="todo-list__lists__add-list__button-icon"
+            [icon]="faPlus"></fa-icon>
+        </button>
+      </form>
+    </div>
+    <div class="container-right">
+      <h2 class="container-heading">Tasks</h2>
+      <p class="no-category" *ngIf="!todoLists.length">
+        Category not yet added? Create one first.
+      </p>
+      <div
+        class="wrapper"
+        [@fadeInAnimation]
+        *ngFor="let task of selectedList.tasks">
+        <knb-portfolio-todo-list-card
+          (editItem)="onEditItemEvent($event)"
+          cardType="task"
+          [cardData]="task"></knb-portfolio-todo-list-card>
+      </div>
+      <form class="add-form" [formGroup]="addTaskForm" (ngSubmit)="addTask()">
+        <input
+          formControlName="taskName"
+          type="text"
+          class="add-form-input"
+          placeholder="Add list..." />
+        <button
+          class="add-form-button"
+          type="submit"
+          [disabled]="!addTaskForm.get('taskName').valid">
+          <fa-icon
+            class="todo-list__lists__add-list__button-icon"
+            [icon]="faPlus"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
 <knb-portfolio-modal>
-  <form [formGroup]="editForm" (ngSubmit)="editItem()" class="edit">
-    <h1 class="edit__title">Edit item</h1>
-    <input
-      formControlName="editedName"
-      type="text"
-      class="edit__input"
-      #editInput />
-    <button class="edit__submit primary-button" type="submit">Submit</button>
-    <button
-      class="edit__close secondary-button"
-      (click)="modalService.toggleModal()">
-      Cancel
-    </button>
-  </form>
+  <knb-portfolio-todo-list-edit
+    [editedItem]="editedItem"></knb-portfolio-todo-list-edit>
 </knb-portfolio-modal>

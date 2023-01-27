@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -27,11 +28,11 @@ import { LandingIntroComponent } from './features/landing/landing-intro/landing-
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   providers: [

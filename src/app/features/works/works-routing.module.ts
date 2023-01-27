@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PayApiHomeComponent } from './pay-api/pay-api-home/pay-api-home.component';
-import { PayApiComponent } from './pay-api/pay-api.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { WorksDemoComponent } from './works-demo/works-demo.component';
+
 import { WorksComponent } from './works.component';
+import { WorksDemoComponent } from './works-demo/works-demo.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { PayApiComponent } from './pay-api/pay-api.component';
+import { PayApiHomeComponent } from './pay-api/pay-api-home/pay-api-home.component';
 
 const routes: Routes = [
   { path: '', component: WorksComponent, children: [] },

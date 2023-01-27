@@ -1,0 +1,26 @@
+.simple-ui {
+  padding: 10rem 16rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 50%;
+}
+
+.heading {
+  margin-bottom: 3rem;
+}
+
+.ui-img {
+  z-index: 2;
+}
+
+.background-img {
+  position: absolute;
+  right: -35rem;
+  z-index: 1;
+}

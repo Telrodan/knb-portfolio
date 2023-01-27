@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Work } from 'src/app/core/models/works.model';
 
 import { works } from './WORKS_DATA';
 
@@ -8,5 +9,5 @@ import { works } from './WORKS_DATA';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent {
-  public works = works;
+  public works: Work[] = works;
 }

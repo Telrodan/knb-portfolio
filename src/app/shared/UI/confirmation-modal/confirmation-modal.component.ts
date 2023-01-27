@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationModalService } from 'src/app/core/services/confirmation-modal.service';

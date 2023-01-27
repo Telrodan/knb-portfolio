@@ -1,6 +1,6 @@
 export interface TodoList {
   id: string;
-  name: string;
+  title: string;
   tasks: Array<Task>;
 }
 
@@ -8,5 +8,5 @@ export interface Task {
   id: string;
   listId: string;
   checked: boolean;
-  name: string;
+  title: string;
 }

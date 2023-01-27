@@ -46,23 +46,7 @@
   }
 
   &__confirm {
-    padding: 1rem 2rem;
     margin-right: 4rem;
-    color: var(--text);
-    border: 1px solid var(--teal);
-    background-color: transparent;
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  &__cancel {
-    padding: 1rem 2rem;
-    margin-right: 2rem;
-    color: var(--text);
-    border: 1px solid var(--blue);
-    background-color: transparent;
-    font-size: 1.8rem;
-    cursor: pointer;
   }
 
   &__close {

@@ -1,28 +1,28 @@
-.todo-list-card {
+.card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  // background-color: var(--blue-transparent);
-  border: 1px dotted var(--blue);
   padding: 1rem 2rem;
+  background-color: var(--blue-transparent);
+  border: 1px dotted var(--blue);
   font-size: 1.6rem;
   transition: all 0.3s ease-in;
+}
 
-  &__button {
-    border: none;
-    background-color: transparent;
-    font-size: 2rem;
-    color: var(--surface);
-    transition: all 0.3s ease-in;
-    cursor: pointer;
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  color: var(--surface);
+  transition: all 0.3s ease-in;
+  cursor: pointer;
 
-    &:hover {
-      color: var(--text);
-    }
+  &:hover {
+    color: var(--text);
+  }
 
-    &:not(:last-child) {
-      margin-right: 1rem;
-    }
+  &:not(:last-child) {
+    margin-right: 1rem;
   }
 }

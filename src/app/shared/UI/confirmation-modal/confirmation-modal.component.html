@@ -3,10 +3,14 @@
     <h1 class="confirmation-modal__title">{{ title }}</h1>
     <p class="confirmation-modal__message">{{ message }}</p>
     <div class="confirmation-modal__actions">
-      <button class="confirmation-modal__confirm" (click)="onConfirm()">
+      <button
+        class="confirmation-modal__confirm primary-button-dotted"
+        (click)="onConfirm()">
         Confirm
       </button>
-      <button class="confirmation-modal__cancel" (click)="onCancel()">
+      <button
+        class="confirmation-modal__cancel secondary-button-dotted"
+        (click)="onCancel()">
         Cancel
       </button>
     </div>
