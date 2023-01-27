@@ -26,12 +26,12 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 })
 export class AppComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
-  private onScroll(event: any) {
+  private onScroll() {
     const scrollDistance = window.pageYOffset;
     if (scrollDistance < this.previousScrollDistance) {
       this.isNavbarHidden = false;
     } else {
-      this.isNavbarHidden = window.pageYOffset >= 200 ? true : false;
+      this.isNavbarHidden = window.pageYOffset >= 50 ? true : false;
     }
     this.previousScrollDistance = scrollDistance;
   }

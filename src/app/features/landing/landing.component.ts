@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { faUser, faPhone } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'knb-portfolio-landing',
   templateUrl: './landing.component.html',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
   public isLoading = true;
+  public faUser = faUser;
+  public faPhone = faPhone;
 
   public ngOnInit(): void {
     setTimeout(() => {

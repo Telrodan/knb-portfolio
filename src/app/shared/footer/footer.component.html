@@ -1,42 +1,33 @@
-<div class="footer" *ngIf="!isDemoMode">
-  <ul class="footer__list">
-    <li class="footer__item">
-      <a routerLink="about-me" class="footer__link"
-        ><fa-icon class="footer__icon" [icon]="faUser"></fa-icon>About me</a
+<footer *ngIf="!isDemoMode">
+  <ul class="list">
+    <li class="list-item">
+      <a routerLink="about-me" class="list-link underline"
+        ><fa-icon [icon]="faUser"></fa-icon>About me</a
       >
     </li>
-    <li class="footer__item">
-      <a routerLink="works" class="footer__link"
-        ><fa-icon class="footer__icon" [icon]="faSheetPlastic"></fa-icon
-        >Works</a
+    <li class="list-item">
+      <a routerLink="works" class="list-link underline"
+        ><fa-icon [icon]="faSheetPlastic"></fa-icon>Works</a
       >
     </li>
-    <li class="footer__item">
-      <a routerLink="contact" class="footer__link"
-        ><fa-icon class="footer__icon" [icon]="faPhone"></fa-icon>Contact</a
+    <li class="list-item">
+      <a routerLink="contact" class="list-link underline"
+        ><fa-icon [icon]="faPhone"></fa-icon>Contact</a
       >
     </li>
   </ul>
-  <div class="footer__socials">
+  <div class="social-container">
     <a
-      class="footer__socials-link"
+      class="social-link"
       href="https://www.linkedin.com/in/bence-keresztes-nagy-aba1a024b/"
       target="_blank"
-      ><fa-icon class="footer__socials-icon" [icon]="faLinkedin"></fa-icon
+      ><fa-icon [icon]="faLinkedin"></fa-icon
     ></a>
-    <a
-      class="footer__socials-link"
-      href="https://github.com/Telrodan"
-      target="_blank"
-      ><fa-icon class="footer__socials-icon" [icon]="faGithub"></fa-icon
+    <a class="social-link" href="https://github.com/Telrodan" target="_blank"
+      ><fa-icon [icon]="faGithub"></fa-icon
     ></a>
   </div>
-  <div class="footer__legal">
-    <a href="" class="footer__legal-link">Terms of Service</a>
-    -
-    <a href="" class="footer__legal-link">Privacy Policy</a>
-  </div>
-  <div class="footer__logo">
+  <div class="logo">
     <knb-portfolio-logo></knb-portfolio-logo>
   </div>
-</div>
+</footer>

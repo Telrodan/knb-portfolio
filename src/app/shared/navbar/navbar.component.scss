@@ -66,15 +66,19 @@ nav {
   }
 }
 
-.list-item {
-  font-size: 1.6rem;
+.list-item:not(:last-child) {
+  margin-right: 5rem;
 
-  &:not(:last-child) {
-    margin-right: 5rem;
+  @include respond(sm) {
+    margin: 0 0 3rem 0;
+  }
+}
 
-    @include respond(sm) {
-      margin: 0 0 3rem 0;
-    }
+.list-link {
+  font-size: 1.8rem;
+
+  @include respond(sm) {
+    font-size: 3rem;
   }
 }
 

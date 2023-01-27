@@ -1,133 +1,76 @@
 @import '../../../scss/mixins';
 
-.footer {
+footer {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 20rem;
+  justify-content: center;
+  height: 15rem;
   padding: 4rem;
   background-color: var(--color-surface);
-  border-top: 2px solid var(--color-border);
-  font-size: 16px;
+  border-top: 1px solid var(--color-border);
 
   @include respond(sm) {
     align-items: flex-start;
     height: auto;
   }
+}
 
-  &__list {
-    display: flex;
+.list {
+  display: flex;
 
-    @include respond(sm) {
-      flex-direction: column;
-      order: 2;
-    }
+  @include respond(sm) {
+    flex-direction: column;
+    order: 2;
   }
+}
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 8rem;
+.list-item:not(:last-child) {
+  margin-right: 8rem;
 
-      @include respond(sm) {
-        margin: 0 0 2rem;
-      }
-    }
+  @include respond(sm) {
+    margin: 0 0 2rem;
   }
+}
 
-  &__link,
-  &__legal-link {
-    position: relative;
-    color: var(--color-text-primary);
-    transition: all 0.4s ease;
-    padding-bottom: 0.5rem;
-    cursor: pointer;
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      bottom: 0;
-      background: var(--color-text-primary);
-      transition: transform 0.4s ease;
-      transform: scale(0, 1);
-      transform-origin: right center;
-    }
-
-    &:hover:before {
-      transform: scale(1, 1);
-      transform-origin: left center;
-    }
-
-    .footer__icon {
-      margin-right: 0.5rem;
-    }
+.list-link {
+  font-size: 1.6rem;
+  fa-icon {
+    margin-right: 0.5rem;
   }
+}
 
-  &__socials {
-    margin-top: 4rem;
+.social-container {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  margin-top: 4rem;
 
-    @include respond(sm) {
-      flex-direction: column;
-      order: 3;
-    }
+  @include respond(sm) {
+    position: static;
+    order: 3;
   }
+}
 
-  &__socials-link {
-    position: relative;
-    border-radius: 500px;
-    font-size: 2.5rem;
-    z-index: 1;
+.social-link {
+  color: var(--color-text-primary);
+  font-size: 4rem;
+  z-index: 1;
 
-    @include respond(sm) {
-      margin-left: 1rem;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 5rem;
-      height: 5rem;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: var(--surface-secondary);
-      border-radius: 500px;
-      z-index: -1;
-    }
-
-    &:not(:last-child) {
-      margin-right: 4rem;
-    }
+  &:not(:last-child) {
+    margin-right: 4rem;
   }
+}
 
-  &__socials-icon {
-    color: var(--color-text-primary);
-  }
+.logo {
+  position: absolute;
+  left: 4rem;
+  bottom: 4rem;
 
-  &__legal {
-    position: absolute;
-    right: 3rem;
-    bottom: 2rem;
-    color: var(--color-text-primary);
-
-    @include respond(sm) {
-      position: static;
-      margin-top: 3rem;
-      order: 4;
-    }
-  }
-
-  &__logo {
-    position: absolute;
-    left: 3rem;
-    bottom: 2rem;
-
-    @include respond(sm) {
-      position: static;
-      margin-bottom: 2rem;
-      order: 1;
-    }
+  @include respond(sm) {
+    position: static;
+    margin-bottom: 2rem;
+    order: 1;
   }
 }

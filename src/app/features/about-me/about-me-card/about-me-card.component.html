@@ -1,5 +1,5 @@
-<div class="about-me-card">
-  <div class="wrapper">
+<main class="card">
+  <div class="card-left">
     <p class="title" data-aos="fade-right" data-aos-duration="1000">
       {{ data.title }} <span class="title-span">{{ data.titleSpan }}</span>
     </p>
@@ -11,12 +11,12 @@
       {{ data.description }}
     </p>
     <a
-      *ngIf="data.isButton"
+      class="button secondary-button"
       data-aos="fade-up"
       data-aos-duration="300"
       data-aos-delay="900"
+      *ngIf="data.isButton"
       [routerLink]="data.buttonUrl"
-      class="button secondary-button"
       >{{ data.buttonText }}</a
     >
     <ul *ngIf="data.isIcons" class="icons">
@@ -128,4 +128,4 @@
       data-aos-duration="1000"
       data-aos-delay="600" />
   </div>
-</div>
+</main>

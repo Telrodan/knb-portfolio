@@ -1,0 +1,98 @@
+@import '../../../scss/mixins';
+
+.landing {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @include respond(lg) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.landing-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+
+  @include respond(lg) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.landing-greet {
+  color: var(--color-blue);
+  font-family: 'Odibee Sans', cursive;
+  font-size: 5rem;
+
+  @include respond(sm) {
+    font-size: 4rem;
+  }
+}
+
+.landing-my-name {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+  font-family: 'Odibee Sans', cursive;
+  font-size: 6rem;
+
+  @include respond(sm) {
+    font-size: 5.5rem;
+  }
+
+  &-span {
+    color: var(--color-teal);
+  }
+}
+
+.landing-profession {
+  color: var(--color-teal);
+  font-family: 'Odibee Sans', cursive;
+  font-size: 4rem;
+}
+
+.container {
+  margin-top: 5rem;
+}
+
+.landing-link {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  fa-icon {
+    margin-right: 0.5rem;
+  }
+}
+
+.landing-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+
+  @include respond(sm) {
+    margin: 7rem 0 0 0;
+  }
+
+  @include respond(lg) {
+    width: 100%;
+    margin: 7rem 0;
+  }
+}
+
+.landing-illustration {
+  width: 60%;
+  box-shadow: 0 0 25px var(--color-blue-transparent);
+  border-radius: 5px;
+
+  @include respond(md) {
+    width: 80%;
+  }
+}
