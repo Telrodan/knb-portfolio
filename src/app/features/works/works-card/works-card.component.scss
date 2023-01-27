@@ -6,7 +6,7 @@
   width: 37rem;
   min-height: 70rem;
   padding: 2rem;
-  box-shadow: 0 0 20px -15px var(--blue);
+  box-shadow: 0 0 20px -15px var(--color-blue);
   border-radius: 5px;
   overflow: hidden;
 
@@ -15,7 +15,7 @@
   }
 
   &__title {
-    color: var(--blue);
+    color: var(--color-blue);
     margin-bottom: 2rem;
     font-size: 2.4rem;
   }
@@ -42,8 +42,8 @@
 
   &__link-demo {
     padding: 1rem 2rem;
-    color: var(--surface);
+    color: var(--color-surface);
     font-size: 1.6rem;
-    background-color: var(--blue);
+    background-color: var(--color-blue);
   }
 }

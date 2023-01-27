@@ -1,15 +1,8 @@
 <div
   class="card"
-  [ngStyle]="{
-    opacity: cardData?.checked ? '0.3' : '1',
-    background:
-      cardData === selectedList
-        ? 'var(--teal-transparent)'
-        : 'var(--blue-transparent)',
-    border:
-      cardData === selectedList
-        ? '1px dotted var(--teal)'
-        : '1px dotted var(--blue)'
+  [ngClass]="{
+    selected: cardData === selectedList,
+    checked: cardData?.checked
   }">
   <p class="card-title">{{ cardData.title }}</p>
   <div class="controls-container">

@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
   @Input() public isDemoMode: boolean;
   public isNavbarOpen = false;
   public isMobileView = false;
-
   public faLinkedin = faLinkedin;
   public faGithub = faGithub;
   public faXmark = faXmark;

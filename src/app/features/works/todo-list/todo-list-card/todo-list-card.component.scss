@@ -5,7 +5,7 @@
   width: 100%;
   padding: 1rem 2rem;
   background-color: var(--blue-transparent);
-  border: 1px dotted var(--blue);
+  border: 1px dotted var(--color-blue);
   font-size: 1.6rem;
   transition: all 0.3s ease-in;
 }
@@ -14,15 +14,24 @@ button {
   border: none;
   background-color: transparent;
   font-size: 2rem;
-  color: var(--surface);
+  color: var(--color-surface);
   transition: all 0.3s ease-in;
   cursor: pointer;
 
   &:hover {
-    color: var(--text);
+    color: var(--color-text-primary);
   }
 
   &:not(:last-child) {
     margin-right: 1rem;
   }
+}
+
+.checked {
+  opacity: 0.3;
+}
+
+.selected {
+  background: var(--teal-transparent);
+  border: 1px dotted var(--color-teal);
 }

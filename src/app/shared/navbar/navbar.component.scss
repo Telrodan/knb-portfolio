@@ -5,137 +5,100 @@
   align-items: center;
   max-width: 100%;
   padding: 2rem 3rem;
-  background-color: var(--surface);
-  border-bottom: 2px solid var(--border);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
 
-  &__hamburger {
-    display: none;
-    margin-left: auto;
-    color: var(--teal);
-    font-size: 3rem;
+.hamburger-button {
+  display: none;
+  margin-left: auto;
+  color: var(--color-teal);
+  font-size: 3rem;
 
-    @include respond(sm) {
-      display: inline-block;
-    }
+  @include respond(sm) {
+    display: inline-block;
   }
+}
 
-  &__wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    z-index: 5;
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 5;
 
-    @include respond(sm) {
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: var(--surface);
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      border-left: 2px solid var(--blue);
-    }
-  }
-
-  &__close {
+  @include respond(sm) {
     position: absolute;
-    top: 2rem;
-    right: 3rem;
-    font-size: 4rem;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: var(--color-surface);
+    border-left: 2px solid var(--color-teal);
   }
+}
 
-  &__close-icon {
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 4rem;
+
+  fa-icon {
     display: none;
-    color: var(--blue);
+    color: var(--color-text-primary);
 
     @include respond(sm) {
       display: inline-block;
     }
   }
+}
 
-  &__list {
-    display: flex;
-    margin-left: 10rem;
+.list {
+  display: flex;
+  margin-left: 10rem;
+
+  @include respond(sm) {
+    flex-direction: column;
+    width: 100%;
+    margin: auto 0;
+    text-align: center;
+  }
+}
+
+.list-item {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-right: 5rem;
 
     @include respond(sm) {
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
-      margin: auto 0;
+      margin: 0 0 3rem 0;
     }
   }
+}
 
-  &__item {
-    font-size: 1.6rem;
+.social-container {
+  margin-left: auto;
 
-    &:not(:last-child) {
-      margin-right: 5rem;
-
-      @include respond(sm) {
-        margin: 0 0 3rem 0;
-      }
-    }
+  @include respond(sm) {
+    margin: 0 auto 20rem;
   }
 
-  &__link {
-    position: relative;
-    padding-bottom: 0.5rem;
-    color: var(--text);
-    font-size: 1.6rem;
-    transition: all 0.4s ease;
-    cursor: pointer;
-
-    @include respond(sm) {
-      font-size: 3rem;
-      color: var(--teal);
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      bottom: 0;
-      background: var(--text);
-      transition: transform 0.4s ease;
-      transform: scale(0, 1);
-      transform-origin: right center;
-
-      @include respond(sm) {
-        height: 2px;
-        background: var(--teal);
-      }
-    }
-
-    &:hover:before {
-      transform: scale(1, 1);
-      transform-origin: left center;
-    }
-  }
-
-  &__socials {
-    margin-left: auto;
-
-    @include respond(sm) {
-      margin: 0 auto 20rem;
-    }
-
-    a:not(:last-child) {
-      margin-right: 1.5rem;
-
-      @include respond(sm) {
-        margin-right: 3rem;
-      }
-    }
-  }
-
-  &__icon {
+  fa-icon {
     font-size: 2.5rem;
-    color: var(--text);
+    color: var(--color-text-primary);
 
     @include respond(sm) {
       font-size: 5rem;
-      color: var(--text);
+    }
+  }
+
+  a:not(:last-child) {
+    margin-right: 1.5rem;
+
+    @include respond(sm) {
+      margin-right: 3rem;
     }
   }
 }

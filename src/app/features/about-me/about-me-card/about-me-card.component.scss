@@ -27,17 +27,17 @@
 
     .title {
       margin-bottom: 2.5rem;
-      color: var(--teal);
+      color: var(--color-teal);
       font-family: 'Odibee Sans', cursive;
       font-size: 6rem;
 
       &-span {
-        color: var(--text);
+        color: var(--color-text-primary);
       }
     }
 
     .description {
-      color: var(--text);
+      color: var(--color-text-primary);
       font-size: 1.8rem;
       line-height: 2.6rem;
     }
@@ -66,7 +66,7 @@
       }
 
       &__icon {
-        color: var(--teal);
+        color: var(--color-teal);
       }
 
       &__icon-img {
@@ -76,7 +76,7 @@
       }
 
       &__name {
-        color: var(--text);
+        color: var(--color-text-primary);
         font-size: 1.4rem;
       }
     }
@@ -96,7 +96,7 @@
       margin-top: 5rem;
       width: 50%;
       border-radius: 10px;
-      box-shadow: 0 0 50px -35px var(--blue);
+      box-shadow: 0 0 50px -35px var(--color-blue);
 
       @include respond(sm) {
         width: 80%;

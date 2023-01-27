@@ -6,7 +6,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--surface);
+  background-color: var(--color-surface);
 
   @include respond(sm) {
     padding-top: 4rem;
@@ -15,7 +15,7 @@ main {
 
 .heading {
   margin-bottom: 2rem;
-  color: var(--teal);
+  color: var(--color-teal);
   font-size: 5rem;
   letter-spacing: 2px;
   font-family: 'Odibee Sans', cursive;
@@ -34,9 +34,9 @@ main {
     url('./../../../../assets/images/todo-list/todo-list-background.png');
   background-position: center center;
   background-size: cover;
-  border: 1px solid var(--teal);
+  border: 1px solid var(--color-teal);
   border-radius: 10px;
-  box-shadow: 0 0 45px -35px var(--blue);
+  box-shadow: 0 0 45px -35px var(--color-blue);
 
   @include respond(sm) {
     flex-direction: column;
@@ -46,8 +46,8 @@ main {
 
 .container-heading {
   margin-bottom: 2rem;
-  color: var(--teal);
-  border-bottom: 1px dashed var(--teal);
+  color: var(--color-teal);
+  border-bottom: 1px dashed var(--color-teal);
   font-size: 3rem;
   letter-spacing: 2px;
   font-family: 'Odibee Sans', cursive;
@@ -58,7 +58,7 @@ main {
   position: relative;
   width: 25%;
   padding: 0 1rem;
-  border-right: 1px dashed var(--teal);
+  border-right: 1px dashed var(--color-teal);
 
   @include respond(sm) {
     width: 100%;
@@ -66,7 +66,7 @@ main {
     padding-bottom: 5rem;
     margin-bottom: 1.5rem;
     border-right: none;
-    border-bottom: 1px dashed var(--teal);
+    border-bottom: 1px dashed var(--color-teal);
   }
 }
 
@@ -97,7 +97,7 @@ main {
   left: 50%;
   display: flex;
   margin-top: auto;
-  border: 1px dotted var(--teal);
+  border: 1px dotted var(--color-teal);
   transform: translateX(-50%);
 
   @include respond(sm) {
@@ -108,13 +108,13 @@ main {
 .add-form-input {
   padding: 1rem 2rem;
   width: 15rem;
-  color: var(--text);
+  color: var(--color-text-primary);
   background-color: transparent;
   border: none;
   font-size: 1.6rem;
 
   &::placeholder {
-    color: var(--text);
+    color: var(--color-text-primary);
   }
 
   &:focus {
@@ -124,8 +124,8 @@ main {
 
 .add-form-button {
   width: 4rem;
-  color: var(--text);
-  background-color: var(--teal);
+  color: var(--color-text-primary);
+  background-color: var(--color-teal);
   border: none;
   font-size: 2rem;
   cursor: pointer;

@@ -11,7 +11,7 @@
 // font-family: 'Public Sans', sans-serif;
 
 html {
-  color: var(--text);
+  color: var(--color-text-primary);
   font-size: 10px;
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
@@ -24,7 +24,7 @@ html {
 // PORTFOLIO
 .primary-heading {
   letter-spacing: 2px;
-  color: var(--teal);
+  color: var(--color-teal);
   font-size: 4rem;
   font-family: 'Odibee Sans', cursive;
   font-weight: 400;

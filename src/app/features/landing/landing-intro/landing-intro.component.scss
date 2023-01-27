@@ -24,24 +24,24 @@
   }
 
   &__greet {
-    color: var(--blue);
+    color: var(--color-blue);
     font-family: 'Odibee Sans', cursive;
     font-size: 5rem;
   }
 
   &__my-name {
     margin-bottom: 0.5rem;
-    color: var(--text);
+    color: var(--color-text-primary);
     font-family: 'Odibee Sans', cursive;
     font-size: 6rem;
 
     &-span {
-      color: var(--teal);
+      color: var(--color-teal);
     }
   }
 
   &__profession {
-    color: var(--teal);
+    color: var(--color-teal);
     font-family: 'Odibee Sans', cursive;
     font-size: 4rem;
   }
@@ -76,7 +76,7 @@
 
   &__illustration {
     width: 60%;
-    box-shadow: 0 0 50px -35px var(--blue);
+    box-shadow: 0 0 50px -35px var(--color-blue);
     border-radius: 5px;
 
     @include respond(md) {

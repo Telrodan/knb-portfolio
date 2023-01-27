@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     if (scrollDistance < this.previousScrollDistance) {
       this.isNavbarHidden = false;
     } else {
-      this.isNavbarHidden = window.pageYOffset >= 10 ? true : false;
+      this.isNavbarHidden = window.pageYOffset >= 200 ? true : false;
     }
     this.previousScrollDistance = scrollDistance;
   }
