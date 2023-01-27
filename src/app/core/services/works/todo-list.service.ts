@@ -83,9 +83,11 @@ export class TodoListService {
     ])
       .pipe(
         map(([listsDTO, tasksDTO]) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           return listsDTO.lists.map((list: any) => {
             const tasks = tasksDTO.tasks
               .filter((task) => task.listId === list._id)
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               .map((task: any) => {
                 return {
                   id: task._id,

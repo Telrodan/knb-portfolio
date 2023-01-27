@@ -9,10 +9,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 import { Subject, takeUntil } from 'rxjs';
-import { v4 as uuidv4 } from 'uuid';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-import { Task, TodoList } from 'src/app/core/models/todo-list.model';
+import { TodoList } from 'src/app/core/models/todo-list.model';
 import { TodoListService } from 'src/app/core/services/works/todo-list.service';
 import { ModalService } from 'src/app/core/services/modal.service';
 
@@ -32,6 +31,7 @@ import { ModalService } from 'src/app/core/services/modal.service';
 export class TodoListComponent implements OnInit, OnDestroy {
   @ViewChild('editInput') public editInput: ElementRef;
   public todoLists: TodoList[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public editedItem: any;
   public selectedList: TodoList;
   public addListForm: FormGroup;
@@ -106,8 +106,13 @@ export class TodoListComponent implements OnInit, OnDestroy {
     this.selectedList = list;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public onEditItemEvent(editedItem: any) {
     this.editedItem = { ...editedItem };
     this.modalService.toggleModal();
+  }
+
+  public changeSelectedList(): void {
+    this.selectList(this.todoLists[0]);
   }
 }
