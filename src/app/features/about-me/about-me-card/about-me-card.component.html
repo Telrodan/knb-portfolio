@@ -1,17 +1,17 @@
 <main class="card">
   <div class="card-left">
-    <p class="title" data-aos="fade-right" data-aos-duration="1000">
-      {{ data.title }} <span class="title-span">{{ data.titleSpan }}</span>
+    <p class="card-title" data-aos="fade-right" data-aos-duration="1000">
+      {{ data.title }} <span class="card-title-span">{{ data.titleSpan }}</span>
     </p>
     <p
-      class="description"
+      class="card-description"
       data-aos="fade-right"
       data-aos-duration="1000"
       data-aos-delay="300">
       {{ data.description }}
     </p>
     <a
-      class="button secondary-button"
+      class="card-button secondary-button"
       data-aos="fade-up"
       data-aos-duration="300"
       data-aos-delay="900"
@@ -19,103 +19,103 @@
       [routerLink]="data.buttonUrl"
       >{{ data.buttonText }}</a
     >
-    <ul *ngIf="data.isIcons" class="icons">
+    <ul *ngIf="data.isIcons" class="icons-container">
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="900">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faHtml5"></fa-icon>
-        <p class="icons__name">HTML5</p>
+        <p class="icon-name">HTML5</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1000">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faCss3Alt"></fa-icon>
-        <p class="icons__name">CSS3</p>
+        <p class="icon-name">CSS3</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1100">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faSass"></fa-icon>
-        <p class="icons__name">SASS</p>
+        <p class="icon-name">SASS</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1200">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faSquareJs"></fa-icon>
-        <p class="icons__name">JavaScript</p>
+        <p class="icon-name">JavaScript</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1300">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faAngular"></fa-icon>
-        <p class="icons__name">Angular</p>
+        <p class="icon-name">Angular</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1400">
         <img
           src="../../../../assets/icons/rxjs.svg"
           alt="RxJs"
-          class="icons__icon-img" />
-        <p class="icons__name">RxJs</p>
+          class="icon-image" />
+        <p class="icon-name">RxJs</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1500">
         <img
           src="../../../../assets/icons/ngrx.svg"
           alt="RxJs"
-          class="icons__icon-img" />
-        <p class="icons__name">NgRx</p>
+          class="icon-image" />
+        <p class="icon-name">NgRx</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1600">
         <img
           src="../../../../assets/icons/primeng.svg"
           alt="RxJs"
-          class="icons__icon-img" />
-        <p class="icons__name">PrimeNg</p>
+          class="icon-image" />
+        <p class="icon-name">PrimeNg</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1700">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faGit"></fa-icon>
-        <p class="icons__name">Git</p>
+        <p class="icon-name">Git</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1800">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faGithub"></fa-icon>
-        <p class="icons__name">Github</p>
+        <p class="icon-name">Github</p>
       </li>
       <li
-        class="icons__item"
+        class="icon"
         data-aos="fade-right"
         data-aos-duration="300"
         data-aos-delay="1900">
         <fa-icon class="icons__icon fa-fw fa-4x" [icon]="faNodeJs"></fa-icon>
-        <p class="icons__name">NodeJs</p>
+        <p class="icon-name">NodeJs</p>
       </li>
     </ul>
   </div>

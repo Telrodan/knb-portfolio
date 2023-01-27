@@ -25,88 +25,81 @@
   @include respond(lg) {
     width: 100%;
   }
+}
 
-  .about-me-card {
-    .wrapper {
-    }
+.card-title {
+  margin-bottom: 2.5rem;
+  color: var(--color-teal);
+  font-family: 'Odibee Sans', cursive;
+  font-size: 6rem;
 
-    .title {
-      margin-bottom: 2.5rem;
-      color: var(--color-teal);
-      font-family: 'Odibee Sans', cursive;
-      font-size: 6rem;
-
-      &-span {
-        color: var(--color-text-primary);
-      }
-    }
-
-    .description {
-      color: var(--color-text-primary);
-      font-size: 1.8rem;
-      line-height: 2.6rem;
-    }
-
-    .button {
-      margin-top: 5rem;
-    }
-
-    .icons {
-      margin-top: 5rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-
-      &__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 2rem;
-        width: 7rem;
-
-        &:not(:last-child) {
-          margin-right: 0.5rem;
-        }
-      }
-
-      &__icon {
-        color: var(--color-teal);
-      }
-
-      &__icon-img {
-        width: 3.5rem;
-        height: 3.5rem;
-        margin-bottom: 0.9rem;
-      }
-
-      &__name {
-        color: var(--color-text-primary);
-        font-size: 1.4rem;
-      }
-    }
+  &-span {
+    color: var(--color-text-primary);
   }
+}
 
-  .illustration-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
+.card-description {
+  color: var(--color-text-primary);
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
 
-    @include respond(lg) {
-      width: 100%;
-    }
+.card-button {
+  margin-top: 5rem;
+  font-size: 1.6rem;
+}
 
-    .illustration {
-      margin-top: 5rem;
-      width: 50%;
-      border-radius: 10px;
-      box-shadow: 0 0 50px -35px var(--color-blue);
+.icons-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
 
-      @include respond(sm) {
-        width: 80%;
-        margin-bottom: 2rem;
-      }
-    }
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  margin-bottom: 2rem;
+  color: var(--color-teal);
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+}
+
+.icon-image {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.icon-name {
+  color: var(--color-text-primary);
+  font-size: 1.4rem;
+}
+
+.illustration-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+
+  @include respond(lg) {
+    width: 100%;
+  }
+}
+
+.illustration {
+  margin-top: 5rem;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px var(--color-blue-transparent);
+
+  @include respond(sm) {
+    width: 80%;
+    margin-bottom: 2rem;
   }
 }

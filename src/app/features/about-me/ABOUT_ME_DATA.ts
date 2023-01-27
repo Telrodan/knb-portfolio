@@ -5,7 +5,7 @@ export const data = [
     title: 'About',
     titleSpan: 'me',
     description:
-      'I am a frontend developer with a passion for creating visually appealing and user-friendly web experiences. I have a good understanding of front-end technologies such as HTML, CSS, JavaScript and Angular. I am always eager to stay up to date on the latest web development trends and techniques, and I enjoy experimenting with new technologies and tools to find the best solutions for my projects. My strengths include creating responsive, mobile-friendly designs, implementing clean and semantic code. I am also experienced in working with web APIs, integrating with third-party services, and implementing complex logic.',
+      'I am a frontend developer who enjoys designing visually appealing and user-friendly web experiences. In mid-2021, I began learning to code using udemy and online documentation, as advised by a senior mentor in frontend engineering. I am well-versed in front-end technologies such as HTML, CSS, JavaScript, and Angular. I am constantly looking for new web development trends and techniques to try out, and I enjoy experimenting with new technologies and tools to find the best solutions for my projects.',
     isButton: false,
     buttonText: '',
     buttonUrl: '',
@@ -18,7 +18,7 @@ export const data = [
     title: 'Stack',
     titleSpan: '',
     description:
-      'After finishing my first front-end development project, I was even more inspired to continue learning. I believe my new abilities perfectly complement my prior work experiences, where I was required to be persistent, coordinated, considerate and multitask while under time constraints.',
+      'I was even more motivated to learn after completing my first front-end development project. I believe my new skills complement my previous work experiences, in which I had to be persistent, coordinated, considerate, and multitask while working under time constraints.',
     isButton: false,
     buttonText: '',
     buttonUrl: '',
