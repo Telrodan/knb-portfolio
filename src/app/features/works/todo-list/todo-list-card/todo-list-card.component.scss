@@ -4,7 +4,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: var(--blue-transparent);
+  background-color: var(--color-blue-transparent);
   border: 1px dotted var(--color-blue);
   font-size: 1.6rem;
   transition: all 0.3s ease-in;
@@ -14,7 +14,7 @@ button {
   border: none;
   background-color: transparent;
   font-size: 2rem;
-  color: var(--color-surface);
+  color: var(--color-black);
   transition: all 0.3s ease-in;
   cursor: pointer;
 
@@ -32,6 +32,6 @@ button {
 }
 
 .selected {
-  background: var(--teal-transparent);
+  background: var(--color-teal-transparent);
   border: 1px dotted var(--color-teal);
 }

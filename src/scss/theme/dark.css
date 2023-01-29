@@ -1,6 +1,8 @@
 :root {
   /* PORTFOLIO */
   --font-family: 'Roboto', sans-serif;
+  --color-black: #1d1c26;
+  --color-white: #f2f2f2;
   --color-surface: #0a192f;
   --color-border: #9199b1;
   --color-teal: #64ffda;
@@ -9,8 +11,8 @@
   --color-blue-transparent: #37d0ff28;
   --color-text-primary: #ccd6f6;
   --color-text-secondary: #8892b0;
-  --gradient-1: #1e1e1eec;
-  --gradient-2: #414141e0;
+  --gradient-1: #1e1e1eee;
+  --gradient-2: #414141e8;
 
   /* PAY API */
   --pay-api-color-background: #edf3f8;

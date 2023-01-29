@@ -9,7 +9,8 @@ main {
   background-color: var(--color-surface);
 
   @include respond(sm) {
-    padding-top: 4rem;
+    justify-content: flex-start;
+    padding: 4.5rem 0;
   }
 }
 
@@ -23,9 +24,8 @@ main {
 
 .container {
   display: flex;
-  width: 70%;
+  width: 80%;
   min-height: 70rem;
-  padding: 2rem 0;
   background-image: linear-gradient(
       to right bottom,
       var(--gradient-1),
@@ -35,17 +35,19 @@ main {
   background-position: center center;
   background-size: cover;
   border: 1px solid var(--color-teal);
-  border-radius: 10px;
-  box-shadow: 0 0 45px -35px var(--color-blue);
+  border-radius: 5px;
+  box-shadow: 0 0 25px var(--color-blue-transparent);
 
   @include respond(sm) {
     flex-direction: column;
-    width: 90%;
+    width: 95%;
+    min-height: 100vh;
   }
 }
 
 .container-heading {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
   color: var(--color-teal);
   border-bottom: 1px dashed var(--color-teal);
   font-size: 3rem;
@@ -62,11 +64,10 @@ main {
 
   @include respond(sm) {
     width: 100%;
-    min-height: 20rem;
-    padding-bottom: 5rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 5.5rem;
+    margin-bottom: 2rem;
     border-right: none;
-    border-bottom: 1px dashed var(--color-teal);
+    border-bottom: 1px solid var(--color-teal);
   }
 }
 
@@ -77,8 +78,6 @@ main {
 
   @include respond(sm) {
     width: 100%;
-    min-height: 20rem;
-    padding-bottom: 5rem;
     border-right: none;
   }
 }
@@ -93,16 +92,12 @@ main {
 
 .add-form {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 50%;
   display: flex;
   margin-top: auto;
   border: 1px dotted var(--color-teal);
   transform: translateX(-50%);
-
-  @include respond(sm) {
-    bottom: 1rem;
-  }
 }
 
 .add-form-input {
@@ -124,7 +119,7 @@ main {
 
 .add-form-button {
   width: 4rem;
-  color: var(--color-text-primary);
+  color: var(--color-black);
   background-color: var(--color-teal);
   border: none;
   font-size: 2rem;

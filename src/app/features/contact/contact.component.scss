@@ -1,8 +1,26 @@
-.contact {
+.heading {
+  margin-top: 3rem;
 }
 
-.title {
+.container {
 }
 
-.text {
+.container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../../../assets/images/contact-illustration-01.png');
+  background-position: center center;
+  background-size: cover;
+  height: 50rem;
+  width: 50rem;
+  box-shadow: 0 0 25px var(--color-blue-transparent);
+  border-radius: 5px;
+}
+
+.link,
+.address {
+  color: var(--color-black);
+  font-size: 2rem;
+  font-weight: 500;
 }

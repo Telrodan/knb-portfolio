@@ -2,7 +2,7 @@
   <h1 class="heading">Task manager</h1>
   <div class="container">
     <div class="container-left">
-      <h2 class="container-heading">Categories</h2>
+      <h2 class="container-heading">Lists</h2>
       <div
         class="wrapper"
         [@fadeInAnimation]
@@ -20,7 +20,7 @@
           formControlName="listName"
           type="text"
           class="add-form-input"
-          placeholder="Add category..." />
+          placeholder="Add list..." />
         <button
           class="add-form-button"
           type="submit"
@@ -34,7 +34,7 @@
     <div class="container-right">
       <h2 class="container-heading">Tasks</h2>
       <p class="no-category" *ngIf="!todoLists.length">
-        Category not yet added? Create one first.
+        Lists not yet added? Create one first.
       </p>
       <div
         class="wrapper"
