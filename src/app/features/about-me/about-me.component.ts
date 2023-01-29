@@ -13,8 +13,10 @@ export class AboutMeComponent implements OnInit {
 
   public ngOnInit(): void {
     setTimeout(() => {
-      this.scrollToElement('about-me-section');
       this.isLoading = false;
+      setTimeout(() => {
+        this.scrollToElement('about-me-section');
+      }, 200);
     }, 500);
   }
 

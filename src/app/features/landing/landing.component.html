@@ -1,4 +1,4 @@
-<main class="landing">
+<main class="landing" *ngIf="!isLoading">
   <div class="landing-left">
     <p class="landing-greet" data-aos="fade-right" data-aos-duration="500">
       Hello, I'm
@@ -41,5 +41,4 @@
       data-aos-delay="2000" />
   </div>
 </main>
-
 <knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

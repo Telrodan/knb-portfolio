@@ -5,7 +5,7 @@ export const data = [
     title: 'About',
     titleSpan: 'me',
     description:
-      'I am a frontend developer who enjoys designing visually appealing and user-friendly web experiences. In mid-2021, I began learning to code using udemy and online documentation, as advised by a senior mentor in frontend engineering. I am well-versed in front-end technologies such as HTML, CSS, JavaScript, and Angular. I am constantly looking for new web development trends and techniques to try out, and I enjoy experimenting with new technologies and tools to find the best solutions for my projects.',
+      'I am a frontend developer who enjoys creating visually appealing and user-friendly web experiences. In mid-2021, I began learning to code using udemy and online documentation, as advised by a senior mentor in frontend engineering. I am well-versed in front-end technologies such as HTML, CSS, JavaScript, and Angular. I am constantly looking for new web development trends and techniques to try out, and I enjoy experimenting with new technologies and tools to find the best solutions for my projects.',
     isButton: false,
     buttonText: '',
     buttonUrl: '',
