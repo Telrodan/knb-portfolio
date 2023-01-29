@@ -1,4 +1,4 @@
-<main class="works">
+<main class="works" *ngIf="!isLoading">
   <h1
     class="heading primary-heading"
     data-aos="fade-down"
@@ -15,3 +15,4 @@
       [work]="work"></knb-portfolio-works-card>
   </div>
 </main>
+<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

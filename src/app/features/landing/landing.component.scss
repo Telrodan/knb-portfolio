@@ -2,7 +2,7 @@
 
 .landing {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 8rem);
   overflow-x: hidden;
 
   @include respond(lg) {
