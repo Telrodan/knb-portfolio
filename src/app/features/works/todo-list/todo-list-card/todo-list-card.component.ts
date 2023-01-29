@@ -49,7 +49,7 @@ export class TodoListCardComponent implements OnDestroy {
     if (this.cardType === 'list') {
       const confirmed = await this.confirmationModalService.confirmAction(
         'Delete List',
-        `Are you sure you want to delete ${data.name} list? `
+        `Are you sure you want to delete ${data.title}? `
       );
       if (confirmed) {
         this.todoListService.deleteList(data.id);
@@ -58,7 +58,7 @@ export class TodoListCardComponent implements OnDestroy {
     } else {
       const confirmed = await this.confirmationModalService.confirmAction(
         'Delete Task',
-        `Are you sure you want to delete ${data.name} task? `
+        `Are you sure you want to delete ${data.title}? `
       );
       if (confirmed) this.todoListService.deleteTask(data.id, data.listId);
     }
