@@ -18,6 +18,7 @@ import { EmailService } from 'src/app/core/services/email.service';
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
   public isLoading = true;
+  public isSending = false;
   public isMessageSent = false;
   public isError = false;
   public faInbox = faInbox;
@@ -39,24 +40,17 @@ export class ContactComponent implements OnInit {
   }
 
   public onSendMessage(): void {
+    this.isSending = true;
     if (this.contactForm.valid) {
       const message = {
         ...this.contactForm.value,
         sentTime: new Date().toString()
       };
-      this.emailService
-        .sendMessage(message)
-        .pipe(
-          catchError((err) => {
-            this.isError = true;
-            this.isMessageSent = true;
-            return err;
-          })
-        )
-        .subscribe(() => {
-          this.isLoading = false;
-          this.isMessageSent = true;
-        });
+      this.emailService.sendMessage(message).subscribe(() => {
+        this.isMessageSent = true;
+        this.isSending = false;
+        console.log('sending finished');
+      });
     }
   }
 }

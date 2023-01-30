@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SpinnerComponent } from './UI/spinner/spinner.component';
 import { ConfirmationModalComponent } from './UI/confirmation-modal/confirmation-modal.component';
 import { ModalComponent } from './UI/modal/modal.component';
+import { LoadingSpinnerComponent } from './UI/loading-spinner/loading-spinner.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, FontAwesomeModule],
@@ -19,7 +20,8 @@ import { ModalComponent } from './UI/modal/modal.component';
     LogoComponent,
     SpinnerComponent,
     ConfirmationModalComponent,
-    ModalComponent
+    ModalComponent,
+    LoadingSpinnerComponent
   ],
   exports: [
     NavbarComponent,
@@ -27,7 +29,8 @@ import { ModalComponent } from './UI/modal/modal.component';
     LogoComponent,
     SpinnerComponent,
     ConfirmationModalComponent,
-    ModalComponent
+    ModalComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule {}

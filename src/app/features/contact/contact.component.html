@@ -44,7 +44,7 @@
         class="form"
         [formGroup]="contactForm"
         (submit)="onSendMessage()"
-        *ngIf="!isMessageSent">
+        *ngIf="!isSending && !isMessageSent">
         <div class="form-group">
           <input
             class="form-input"
@@ -92,6 +92,9 @@
           <fa-icon [icon]="faPaperPlane"></fa-icon> Send message
         </button>
       </form>
+      <div class="loading-spinner-container" *ngIf="isSending">
+        <knb-portfolio-loading-spinner></knb-portfolio-loading-spinner>
+      </div>
 
       <h1
         class="message-sent primary-heading"
