@@ -24,7 +24,6 @@ export class ConfirmationModalComponent implements OnInit {
   public ngOnInit(): void {
     this.confirmationModalService.titleAndMessageChanges$.subscribe(
       (data: ConfirmationModal) => {
-        console.log(data);
         this.title = data.title;
         this.message = data.message;
       }

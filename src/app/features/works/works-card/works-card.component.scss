@@ -1,4 +1,4 @@
-@import '../../../../scss/mixins';
+@use '../../../../scss/abstracts' as *;
 
 .card {
   display: flex;

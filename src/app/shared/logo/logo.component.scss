@@ -1,7 +1,9 @@
+@use '../../../scss/abstracts' as *;
+
 .logo {
   font-family: 'Odibee Sans', cursive;
   font-size: 34px;
-  color: var(--color-teal);
+  color: $color-secondary;
   animation-name: flashingLetter;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -10,6 +12,6 @@
 
 @keyframes flashingLetter {
   100% {
-    color: var(--color-blue);
+    color: $color-white;
   }
 }

@@ -7,7 +7,6 @@ import {
   faLocationDot,
   faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
-import { catchError } from 'rxjs';
 import { EmailService } from 'src/app/core/services/email.service';
 
 @Component({
@@ -49,7 +48,6 @@ export class ContactComponent implements OnInit {
       this.emailService.sendMessage(message).subscribe(() => {
         this.isMessageSent = true;
         this.isSending = false;
-        console.log('sending finished');
       });
     }
   }

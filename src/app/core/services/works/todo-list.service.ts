@@ -10,7 +10,6 @@ import { Task, TodoList } from '../../models/todo-list.model';
 })
 export class TodoListService {
   public todoLists: TodoList[];
-  public selectedList: TodoList;
   private listsUpdated = new Subject<TodoList[]>();
   private editedItemUpdated = new Subject<{
     data: TodoList | Task;
@@ -166,9 +165,5 @@ export class TodoListService {
         this.todoLists[listIndex].tasks.splice(taskIndex, 1);
         this.listsUpdated.next([...this.todoLists]);
       });
-  }
-
-  public getSelectedList(): TodoList {
-    return this.selectedList;
   }
 }

@@ -52,6 +52,9 @@ export class TodoListCardComponent implements OnDestroy {
         `Are you sure you want to delete ${data.title}? `
       );
       if (confirmed) {
+        this.selectedList.tasks.map((task) => {
+          this.todoListService.deleteTask(task.id, task.listId);
+        });
         this.todoListService.deleteList(data.id);
         this.selectedListDelete.emit();
       }
@@ -69,7 +72,6 @@ export class TodoListCardComponent implements OnDestroy {
       ...task,
       checked: !task.checked
     };
-    console.log(updatedTask);
     this.todoListService.updateTask(updatedTask);
   }
 

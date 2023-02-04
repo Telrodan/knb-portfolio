@@ -1,13 +1,13 @@
-@import '../../../scss/mixins';
+@use '../../../scss/abstracts' as *;
 
 .landing {
   display: flex;
-  min-height: calc(100vh - 8rem);
+  justify-content: center;
+  height: 100vh;
   overflow-x: hidden;
 
-  @include respond(lg) {
+  @include respond(sm) {
     flex-direction: column;
-    justify-content: center;
   }
 }
 
@@ -17,57 +17,46 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  font-family: 'Odibee Sans', cursive;
+  text-align: center;
 
-  @include respond(lg) {
+  @include respond(sm) {
     width: 100%;
-    text-align: center;
+    margin: 5rem 0 8rem;
   }
 }
 
-.landing-greet {
-  color: var(--color-blue);
-  font-family: 'Odibee Sans', cursive;
-  font-size: 5rem;
+.landing-greet,
+.landing-profession {
+  color: $color-black;
+  font-size: 4.4rem;
 
   @include respond(sm) {
-    font-size: 4rem;
+    font-size: 3.4rem;
   }
 }
 
 .landing-my-name {
   margin-bottom: 0.5rem;
-  color: var(--color-text-primary);
-  font-family: 'Odibee Sans', cursive;
-  font-size: 6rem;
+  color: $color-white;
+  font-size: 5.5rem;
 
   @include respond(sm) {
-    font-size: 5.5rem;
+    font-size: 4.4rem;
   }
 
   &-span {
-    color: var(--color-teal);
+    color: $color-black;
   }
 }
 
-.landing-profession {
-  color: var(--color-teal);
-  font-family: 'Odibee Sans', cursive;
-  font-size: 4rem;
-}
-
-.container {
-  margin-top: 5rem;
+.links-container {
+  margin-top: 3rem;
 }
 
 .landing-link {
-  font-size: 1.6rem;
-
   &:not(:last-child) {
-    margin-right: 3rem;
-  }
-
-  fa-icon {
-    margin-right: 0.5rem;
+    margin-right: 5rem;
   }
 }
 
@@ -77,22 +66,16 @@
   justify-content: center;
   width: 50%;
 
-  @include respond(sm) {
-    margin: 7rem 0 0 0;
-  }
-
-  @include respond(lg) {
+  @include respond(md) {
     width: 100%;
-    margin: 7rem 0;
   }
 }
 
 .landing-illustration {
-  width: 60%;
-  box-shadow: 0 0 25px var(--color-blue-transparent);
-  border-radius: 5px;
+  width: 70%;
+  box-shadow: $box-shadow;
 
-  @include respond(md) {
-    width: 80%;
+  @include respond(xl) {
+    width: 60%;
   }
 }

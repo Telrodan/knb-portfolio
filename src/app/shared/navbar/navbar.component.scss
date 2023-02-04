@@ -1,18 +1,21 @@
-@import '../../../scss/mixins';
+@use '../../../scss/abstracts' as *;
 
 .navbar {
+  position: fixed;
   display: flex;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
   padding: 2rem 3rem;
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background-color: $color-black;
+  box-shadow: $box-shadow;
+  border-bottom: 1px solid $color-white;
+  z-index: 5;
 }
 
 .hamburger-button {
   display: none;
   margin-left: auto;
-  color: var(--color-teal);
+  color: $color-white;
   font-size: 3rem;
 
   @include respond(sm) {
@@ -33,8 +36,8 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     height: 100vh;
-    background-color: var(--color-surface);
-    border-left: 2px solid var(--color-teal);
+    background-color: $color-black;
+    border-left: 2px solid $color-secondary;
   }
 }
 
@@ -42,11 +45,11 @@ nav {
   position: absolute;
   top: 2rem;
   right: 3rem;
-  font-size: 4rem;
+  font-size: 3rem;
 
   fa-icon {
     display: none;
-    color: var(--color-text-primary);
+    color: $color-white;
 
     @include respond(sm) {
       display: inline-block;
@@ -56,6 +59,7 @@ nav {
 
 .list {
   display: flex;
+  align-items: center;
   margin-left: 10rem;
 
   @include respond(sm) {
@@ -67,7 +71,7 @@ nav {
 }
 
 .list-item:not(:last-child) {
-  margin-right: 5rem;
+  margin-right: 6rem;
 
   @include respond(sm) {
     margin: 0 0 3rem 0;
@@ -75,10 +79,8 @@ nav {
 }
 
 .list-link {
-  font-size: 1.8rem;
-
   @include respond(sm) {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -90,11 +92,11 @@ nav {
   }
 
   fa-icon {
-    font-size: 2.5rem;
-    color: var(--color-text-primary);
+    font-size: 3rem;
+    color: $color-white;
 
     @include respond(sm) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 

@@ -25,9 +25,7 @@
           class="add-form-button"
           type="submit"
           [disabled]="!addListForm.get('listName').valid">
-          <fa-icon
-            class="todo-list__lists__add-list__button-icon"
-            [icon]="faPlus"></fa-icon>
+          <fa-icon [icon]="faPlus"></fa-icon>
         </button>
       </form>
     </div>
@@ -39,13 +37,18 @@
       <div
         class="wrapper"
         [@fadeInAnimation]
-        *ngFor="let task of selectedList.tasks">
+        *ngIf="todoLists.length && selectedList">
         <knb-portfolio-todo-list-card
+          *ngFor="let task of selectedList.tasks"
           (editItem)="onEditItemEvent($event)"
           cardType="task"
           [cardData]="task"></knb-portfolio-todo-list-card>
       </div>
-      <form class="add-form" [formGroup]="addTaskForm" (ngSubmit)="addTask()">
+      <form
+        class="add-form"
+        [formGroup]="addTaskForm"
+        (ngSubmit)="addTask()"
+        *ngIf="todoLists.length">
         <input
           formControlName="taskName"
           type="text"
@@ -55,9 +58,7 @@
           class="add-form-button"
           type="submit"
           [disabled]="!addTaskForm.get('taskName').valid">
-          <fa-icon
-            class="todo-list__lists__add-list__button-icon"
-            [icon]="faPlus"></fa-icon>
+          <fa-icon [icon]="faPlus"></fa-icon>
         </button>
       </form>
     </div>

@@ -1,10 +1,13 @@
-<div class="navbar" *ngIf="!isDemoMode">
+<div
+  class="navbar"
+  [@slideInAndOutFromTopAnimation]="isNavbarHidden"
+  *ngIf="!isDemoMode">
   <knb-portfolio-logo></knb-portfolio-logo>
   <p class="hamburger-button" (click)="toggleNavbar()">
     <fa-icon [icon]="faBars"></fa-icon>
   </p>
   <nav
-    [@slideInAndOutAnimation]="isNavbarOpen"
+    [@slideInAndOutFromLeftAnimation]="isNavbarOpen"
     [ngStyle]="{ right: isNavbarOpen ? '0' : '-100%' }">
     <p class="close-button" (click)="toggleNavbar()">
       <fa-icon [icon]="faXmark"></fa-icon>
@@ -15,7 +18,7 @@
           routerLink="about-me"
           class="list-link underline"
           (click)="toggleNavbar()"
-          >About me</a
+          ><fa-icon [icon]="faUser"></fa-icon> About me</a
         >
       </li>
       <li class="list-item">
@@ -23,7 +26,7 @@
           routerLink="works"
           class="list-link underline"
           (click)="toggleNavbar()"
-          >Works</a
+          ><fa-icon [icon]="faSheetPlastic"></fa-icon> Works</a
         >
       </li>
       <li class="list-item">
@@ -31,7 +34,16 @@
           routerLink="contact"
           class="list-link underline"
           (click)="toggleNavbar()"
-          >Contact</a
+          ><fa-icon [icon]="faPhone"></fa-icon> Contact</a
+        >
+      </li>
+      <li class="list-item">
+        <a
+          href="../../../assets/Keresztes-Nagy-Bence-CV.pdf"
+          download
+          class="secondary-button"
+          (click)="toggleNavbar()"
+          >Resume</a
         >
       </li>
     </ul>

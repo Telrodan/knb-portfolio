@@ -1,4 +1,4 @@
-@import 'mixins';
+@use './abstracts' as *;
 
 // PORTFOLIO
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
@@ -15,10 +15,6 @@ html {
   font-size: 10px;
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
-
-  @include respond(sm) {
-    font-size: 8px;
-  }
 }
 
 // PORTFOLIO
