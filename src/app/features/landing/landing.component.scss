@@ -8,7 +8,7 @@
   background-image: url('../../../assets/images/landing-page/background.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: bottom center;
 
   @include respond(sm) {
     flex-direction: column;
