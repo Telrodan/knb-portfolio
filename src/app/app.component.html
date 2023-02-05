@@ -1,9 +1,6 @@
 <div class="app-layout">
   <knb-portfolio-navbar [isDemoMode]="isDemoMode"></knb-portfolio-navbar>
-
-  <div class="app-router" [ngStyle]="{ padding: isDemoMode ? '0' : '' }">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
   <knb-portfolio-footer [isDemoMode]="isDemoMode"></knb-portfolio-footer>
+  <knb-portfolio-confirmation-modal></knb-portfolio-confirmation-modal>
 </div>
-<knb-portfolio-confirmation-modal></knb-portfolio-confirmation-modal>

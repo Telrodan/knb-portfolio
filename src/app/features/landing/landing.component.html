@@ -1,17 +1,20 @@
 <main class="landing" *ngIf="!isLoading">
   <div class="landing-left">
-    <p class="landing-greet" data-aos="fade-right" data-aos-duration="500">
+    <h2
+      class="landing-greet heading-secondary"
+      data-aos="fade-right"
+      data-aos-duration="500">
       Hello, I'm
-    </p>
-    <p
-      class="landing-my-name"
+    </h2>
+    <h1
+      class="landing-my-name heading-primary"
       data-aos="fade-left"
       data-aos-duration="500"
       data-aos-delay="500">
       Keresztes<span class="landing-my-name-span">-</span>Nagy Bence
-    </p>
+    </h1>
     <p
-      class="landing-profession"
+      class="landing-profession heading-secondary"
       data-aos="fade-right"
       data-aos-duration="500"
       data-aos-delay="1000">
@@ -23,11 +26,11 @@
       data-aos="fade-up"
       data-aos-duration="500"
       data-aos-delay="1500">
-      <a routerLink="about-me" class="landing-link primary-button">About me</a>
+      <a routerLink="about-me" class="landing-link button-primary">About me</a>
       <a
         href="../../../assets/Keresztes-Nagy-Bence-CV.pdf"
         download
-        class="landing-link secondary-button"
+        class="landing-link button-secondary"
         >Resume</a
       >
     </div>

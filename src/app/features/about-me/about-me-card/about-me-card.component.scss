@@ -37,15 +37,15 @@
 
 .card-title {
   margin-bottom: 2.5rem;
-  color: $color-white;
-  font-family: 'Odibee Sans', cursive;
-  font-size: 6rem;
 }
 
 .card-description {
   font-size: 1.8rem;
   line-height: 2.6rem;
-  font-weight: 500;
+  color: $color-white;
+
+  &-span {
+  }
 }
 
 .card-button {
@@ -69,23 +69,17 @@
   justify-content: center;
   width: 7rem;
   margin-bottom: 2rem;
-  color: $color-secondary;
+  color: $color-primary;
 
   &:not(:last-child) {
     margin-right: 0.5rem;
   }
 }
 
-.icon-image {
-  width: 3.5rem;
-  height: 3.5rem;
-  margin-bottom: 0.9rem;
-}
-
 .icon-name {
-  color: $color-white;
   font-weight: 500;
   font-size: 1.6rem;
+  color: $color-white;
 }
 
 .illustration-wrapper {
@@ -105,7 +99,7 @@
   border-radius: 5px;
 
   @include respond(sm) {
-    margin-top: 3rem;
-    width: 80%;
+    margin-top: 5rem;
+    width: 100%;
   }
 }

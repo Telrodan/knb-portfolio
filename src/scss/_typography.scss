@@ -22,12 +22,27 @@ html {
 }
 
 // PORTFOLIO
-.primary-heading {
-  letter-spacing: 2px;
-  font-size: 4rem;
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  margin: 0;
   font-family: 'Odibee Sans', cursive;
   font-weight: 400;
-  text-align: center;
+}
+
+.heading-primary {
+  font-size: 5.5rem;
+  line-height: 5.7rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 4.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 3.2rem;
 }
 
 // PAY-API

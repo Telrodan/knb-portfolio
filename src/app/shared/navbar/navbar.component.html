@@ -1,24 +1,25 @@
 <div
-  class="navbar"
+  class="navbar-container"
   [@slideInAndOutFromTopAnimation]="isNavbarHidden"
   *ngIf="!isDemoMode">
   <knb-portfolio-logo></knb-portfolio-logo>
-  <p class="hamburger-button" (click)="toggleNavbar()">
+  <button class="hamburger-button" (click)="toggleNavbar()">
     <fa-icon [icon]="faBars"></fa-icon>
-  </p>
+  </button>
   <nav
+    class="navbar"
     [@slideInAndOutFromLeftAnimation]="isNavbarOpen"
-    [ngStyle]="{ right: isNavbarOpen ? '0' : '-100%' }">
-    <p class="close-button" (click)="toggleNavbar()">
+    [ngClass]="isNavbarOpen ? 'navbar--open' : 'navbar--closed'">
+    <button class="close-button" (click)="toggleNavbar()">
       <fa-icon [icon]="faXmark"></fa-icon>
-    </p>
+    </button>
     <ul class="list">
       <li class="list-item">
         <a
           routerLink="about-me"
           class="list-link underline"
           (click)="toggleNavbar()"
-          ><fa-icon [icon]="faUser"></fa-icon> About me</a
+          ><fa-icon class="underline-icon" [icon]="faUser"></fa-icon>About me</a
         >
       </li>
       <li class="list-item">
@@ -26,7 +27,8 @@
           routerLink="works"
           class="list-link underline"
           (click)="toggleNavbar()"
-          ><fa-icon [icon]="faSheetPlastic"></fa-icon> Works</a
+          ><fa-icon class="underline-icon" [icon]="faSheetPlastic"></fa-icon
+          >Works</a
         >
       </li>
       <li class="list-item">
@@ -34,14 +36,14 @@
           routerLink="contact"
           class="list-link underline"
           (click)="toggleNavbar()"
-          ><fa-icon [icon]="faPhone"></fa-icon> Contact</a
+          ><fa-icon class="underline-icon" [icon]="faPhone"></fa-icon>Contact</a
         >
       </li>
       <li class="list-item">
         <a
           href="../../../assets/Keresztes-Nagy-Bence-CV.pdf"
           download
-          class="secondary-button"
+          class="button-secondary"
           (click)="toggleNavbar()"
           >Resume</a
         >

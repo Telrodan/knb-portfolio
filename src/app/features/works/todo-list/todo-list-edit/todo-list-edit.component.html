@@ -1,8 +1,10 @@
 <form [formGroup]="editForm" (ngSubmit)="editItem()">
   <h1>Edit item</h1>
   <input formControlName="editedName" type="text" />
-  <button class="primary-button" type="submit">Submit</button>
-  <button class="secondary-button-dotted" (click)="modalService.toggleModal()">
+  <button class="button-primary" type="submit">Submit</button>
+  <button
+    class="button-secondary-outlined"
+    (click)="modalService.toggleModal()">
     Cancel
   </button>
 </form>

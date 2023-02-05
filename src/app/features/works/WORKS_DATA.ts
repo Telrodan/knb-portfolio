@@ -2,7 +2,7 @@ export const works = [
   {
     projectTitle: 'Todo List',
     projectDescription:
-      'I used Node.js as the back-end and Angular as the front-end to create a full-stack to-do list application. The application features a simple and user-friendly interface that enables users to create, view, and manage their tasks. I used Angular`s component-based architecture to build a dynamic and responsive user interface. I created a RESTful API in Node.js for the back-end that manages all data manipulation and interfaces with the database.',
+      'To construct a full-stack to-do list application, I utilized Node.js as the back-end and Angular as the front-end. The program has a straightforward and user-friendly interface that allows users to create, view, and manage tasks. I created a dynamic and responsive user interface using Angular`s component-based design. For the backend, I built a RESTful API in Node.js that handles all data processing and interacts with the database.',
     projectImage: 'todo-list-image.png',
     projectCode:
       'https://github.com/Telrodan/knb-portfolio/tree/main/src/app/features/works/todo-list',

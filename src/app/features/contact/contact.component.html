@@ -1,6 +1,6 @@
 <main class="contact-me" *ngIf="!isLoading">
   <h1
-    class="primary-heading heading"
+    class="heading-primary heading"
     data-aos="fade-right"
     data-aos-duration="500">
     Contact me
@@ -88,7 +88,7 @@
             Please enter a message.
           </p>
         </div>
-        <button class="form-button primary-button" type="submit">
+        <button class="form-button button-primary" type="submit">
           <fa-icon [icon]="faPaperPlane"></fa-icon> Send message
         </button>
       </form>
@@ -97,11 +97,11 @@
       </div>
 
       <h1
-        class="message-sent primary-heading"
+        class="message-sent heading-primary"
         *ngIf="isMessageSent && !isError">
         Message Sent!
       </h1>
-      <h1 class="message-sent primary-heading" *ngIf="isMessageSent && isError">
+      <h1 class="message-sent heading-primary" *ngIf="isMessageSent && isError">
         An error occurred!
       </h1>
     </div>

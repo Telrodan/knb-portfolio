@@ -1,79 +1,72 @@
 @use './abstracts' as *;
 
 // PORTFOLIO
-.primary-button {
+.button-primary,
+.button-secondary {
   display: inline-block;
   padding: 1rem 2rem;
-  color: $color-white;
-  background-color: $color-primary;
   box-shadow: $box-shadow;
   border: 2px solid transparent;
   outline: 2px solid transparent;
   outline-offset: -2px;
   letter-spacing: 0.5px;
   font-family: 'Odibee Sans', cursive;
-  font-size: 2.2rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
-  @include respond(sm) {
-    font-size: 2.4rem;
+  &:hover {
+    outline-offset: 3px;
   }
+}
+
+.button-primary {
+  color: $color-white;
+  background-color: $color-primary;
 
   &:hover {
     outline: 2px solid $color-primary;
-    outline-offset: 3px;
   }
 }
 
-.primary-button-dotted {
-  display: inline-block;
-  padding: 1rem 2rem;
-  color: var(--color-text-primary);
-  background-color: transparent;
-  border: 1px dotted var(--color-teal);
-  cursor: pointer;
-}
-
-.secondary-button {
-  display: inline-block;
-  padding: 1rem 2rem;
+.button-secondary {
   color: $color-black;
   background-color: $color-secondary;
-  box-shadow: $box-shadow;
-  border: 2px solid transparent;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-  letter-spacing: 0.5px;
-  font-family: 'Odibee Sans', cursive;
-  font-size: 2.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  @include respond(sm) {
-    font-size: 2.4rem;
-  }
 
   &:hover {
     outline: 2px solid $color-secondary;
-    outline-offset: 3px;
   }
 }
 
-.secondary-button-dotted {
+.button-primary-outlined,
+.button-secondary-outlined {
   display: inline-block;
   padding: 1rem 2rem;
-  color: $color-white;
+  box-shadow: $box-shadow;
   background-color: transparent;
   letter-spacing: 0.5px;
   font-family: 'Odibee Sans', cursive;
-  box-shadow: $box-shadow;
-  font-size: 2.2rem;
-  border: 2px dotted $color-secondary;
+  font-size: 2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  @include respond(sm) {
-    font-size: 2.4rem;
+.button-primary-outlined {
+  color: $color-black;
+  border: 2px solid $color-primary;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+}
+
+.button-secondary-outlined {
+  color: $color-black;
+  border: 2px solid $color-secondary;
+
+  &:hover {
+    background-color: $color-secondary;
   }
 }
 
@@ -85,6 +78,10 @@
   transition: all 0.4s ease;
   cursor: pointer;
 
+  &-icon {
+    margin-right: 7px;
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -95,11 +92,6 @@
     transition: transform 0.4s ease;
     transform: scale(0, 1);
     transform-origin: right center;
-
-    @include respond(sm) {
-      height: 2px;
-      background: var(--color-teal);
-    }
   }
 
   &:hover {
@@ -109,10 +101,6 @@
   &:hover:before {
     transform: scale(1, 1);
     transform-origin: left center;
-  }
-
-  fa-icon {
-    margin-right: 0.5rem;
   }
 }
 

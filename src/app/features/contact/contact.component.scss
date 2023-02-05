@@ -2,8 +2,8 @@
 
 .contact-me {
   min-height: 100vh;
-  padding: 0 2rem;
-  background-image: url('../../../assets/images/contact-page/background.svg');
+  padding: 0 1rem;
+  background-image: url('../../../assets/images/contact-page/contact-background.svg');
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -14,7 +14,7 @@
 
 .heading {
   padding: 12rem 0 5rem;
-  color: $color-white;
+  text-align: center;
 
   @include respond(sm) {
     padding: 12rem 0 3rem;
@@ -37,7 +37,7 @@
   border-radius: 5px;
 
   @include respond(sm) {
-    width: 60%;
+    width: 80%;
     margin: 0 auto 3rem;
   }
 }
@@ -58,9 +58,8 @@
 
 .link,
 .address {
-  color: $color-black;
+  color: $color-primary;
   font-size: 1.8rem;
-  font-weight: 500;
 
   fa-icon {
     margin-right: 1rem;
@@ -68,51 +67,11 @@
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
   margin-top: auto;
 
   @include respond(sm) {
     margin: 3rem 0;
   }
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-input,
-.form-textarea {
-  padding: 1rem 1.2rem;
-  margin-bottom: 5px;
-  width: 100%;
-  background-color: transparent;
-  box-shadow: $box-shadow;
-  border: 1px solid $color-white;
-  font-size: 1.6rem;
-  transition: all 0.3s ease-in;
-
-  &:focus {
-    outline: none;
-    border: 1px solid $color-black;
-  }
-
-  &::placeholder {
-    color: $color-white;
-  }
-}
-
-.form-textarea {
-  resize: none;
-}
-
-.form-helper {
-  font-size: 1.4rem;
-  color: $color-red;
-}
-
-.form-button {
-  margin-top: 1rem;
 }
 
 .message-sent {

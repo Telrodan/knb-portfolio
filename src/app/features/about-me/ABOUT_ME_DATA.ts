@@ -5,9 +5,9 @@ export const data = [
     title: 'About',
     titleSpan: 'me',
     description:
-      'I am a frontend developer who enjoys creating visually appealing and user-friendly web experiences. In mid-2021, I began learning to code using udemy and online documentation, as advised by a senior mentor in frontend engineering. I am well-versed in front-end technologies such as HTML, CSS, JavaScript, and Angular. I am constantly looking for new web development trends and techniques to try out, and I enjoy experimenting with new technologies and tools to find the best solutions for my projects.',
+      'I bring practical experience with HTML, CSS, JavaScript, and Angular as a frontend developer, as well as a strong desire to create engaging and responsive user experiences. I have worked on both personal and team projects, honing my skills in writing clean and efficient code as well as collaborating effectively with others. I am constantly eager to take on new challenges and grow as a developer.',
     isButton: false,
-    backgroundImage: 'background-01.svg',
+    backgroundImage: 'about-me-background-01.svg',
     buttonText: '',
     buttonUrl: '',
     isIcons: false,
@@ -19,10 +19,10 @@ export const data = [
     title: 'Stack',
     titleSpan: '',
     description:
-      'I was even more motivated to learn after completing my first front-end development project. I believe my new skills complement my previous work experiences, in which I had to be persistent, coordinated, considerate, and multitask while working under time constraints.',
+      'I was even more eager to learn after completing my first front-end development project. In order to continue providing high-quality, innovative web development solutions, I am committed to staying current on industry trends and technologies.',
     isButton: false,
 
-    backgroundImage: 'background-02.svg',
+    backgroundImage: 'about-me-background-02.svg',
     buttonText: '',
     buttonUrl: '',
     isIcons: true,
@@ -34,9 +34,9 @@ export const data = [
     title: 'Works',
     titleSpan: '',
     description:
-      'I enjoy making online content and I`m constantly curious about new technologies.',
+      'I have an expanding portfolio of web development projects that demonstrate my abilities and expertise.',
     isButton: true,
-    backgroundImage: 'background-03.svg',
+    backgroundImage: 'about-me-background-03.svg',
     buttonText: 'Works',
     buttonUrl: '/works',
     isIcons: false,

@@ -1,5 +1,5 @@
 <article class="card">
-  <h1 class="title">{{ work.projectTitle }}</h1>
+  <h1 class="title heading-tertiary">{{ work.projectTitle }}</h1>
   <img
     class="image"
     [src]="'../../../../assets/images/works/' + work.projectImage"
@@ -8,11 +8,11 @@
     {{ work.projectDescription }}
   </p>
   <div class="links">
-    <a [href]="work.projectCode" target="_blank" class="link primary-button"
+    <a [href]="work.projectCode" target="_blank" class="link button-primary"
       ><fa-icon class="icon" [icon]="faGithub"></fa-icon>Source code</a
     >
     <a
-      class="link secondary-button"
+      class="link button-secondary"
       routerLink="demo/todo-list"
       [routerLink]="work.projectDemo"
       ><fa-icon class="icon" [icon]="faDisplay"></fa-icon>Live demo</a
