@@ -1,4 +1,4 @@
-@import '../../../../scss/mixins';
+@use '../../../../scss/abstracts' as *;
 
 .confirmation-modal {
   position: absolute;
@@ -18,9 +18,9 @@
     width: 50%;
     min-height: 20rem;
     padding: 3rem 4rem;
-    background-color: var(--color-surface);
+    background-color: $color-grey;
     border-radius: 10px;
-    box-shadow: 0 0 10px -4px var(--color-blue);
+    box-shadow: $box-shadow;
 
     @include respond(sm) {
       width: 90%;
@@ -29,9 +29,8 @@
 
   &__title {
     margin-bottom: 2rem;
-    color: var(--color-teal);
     font-size: 2.4rem;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: capitalize;
   }
 
@@ -53,7 +52,7 @@
     position: absolute;
     top: 3rem;
     right: 3rem;
-    color: var(--color-text-primary);
+    color: $color-white;
     background-color: transparent;
     border: none;
     font-size: 4rem;

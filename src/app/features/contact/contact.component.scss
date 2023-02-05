@@ -1,7 +1,24 @@
-@import '../../../scss/mixins';
+@use '../../../scss/abstracts/' as *;
+
+.contact-me {
+  min-height: 100vh;
+  padding: 0 2rem;
+  background-image: url('../../../assets/images/contact-page/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include respond(sm) {
+    background-position: center;
+  }
+}
 
 .heading {
-  margin: 3rem 0;
+  padding: 12rem 0 5rem;
+  color: $color-white;
+
+  @include respond(sm) {
+    padding: 12rem 0 3rem;
+  }
 }
 
 .container {
@@ -16,7 +33,7 @@
 .illustration {
   width: 35%;
   margin-right: 5rem;
-  box-shadow: 0 0 25px var(--color-blue-transparent);
+  box-shadow: $box-shadow;
   border-radius: 5px;
 
   @include respond(sm) {
@@ -41,8 +58,9 @@
 
 .link,
 .address {
-  color: var(--color-text-primary);
+  color: $color-black;
   font-size: 1.8rem;
+  font-weight: 500;
 
   fa-icon {
     margin-right: 1rem;
@@ -68,19 +86,19 @@
   padding: 1rem 1.2rem;
   margin-bottom: 5px;
   width: 100%;
-  color: var(--color-text-primary);
   background-color: transparent;
-  border: 1px solid var(--color-teal);
+  box-shadow: $box-shadow;
+  border: 1px solid $color-white;
   font-size: 1.6rem;
   transition: all 0.3s ease-in;
 
   &:focus {
     outline: none;
-    border: 1px solid var(--color-blue);
+    border: 1px solid $color-black;
   }
 
   &::placeholder {
-    color: var(--color-text-secondary);
+    color: $color-white;
   }
 }
 
@@ -90,16 +108,16 @@
 
 .form-helper {
   font-size: 1.4rem;
-  color: var(--color-red);
+  color: $color-red;
 }
 
 .form-button {
   margin-top: 1rem;
-  font-size: 1.6rem;
 }
 
 .message-sent {
   margin-top: 5rem;
+  color: $color-primary;
 }
 
 .loading-spinner-container {

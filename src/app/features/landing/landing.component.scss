@@ -5,9 +5,14 @@
   justify-content: center;
   height: 100vh;
   overflow-x: hidden;
+  background-image: url('../../../assets/images/landing-page/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 
   @include respond(sm) {
     flex-direction: column;
+    background-position: bottom center;
   }
 }
 
@@ -17,6 +22,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  margin-top: 8rem;
   font-family: 'Odibee Sans', cursive;
   text-align: center;
 
@@ -28,7 +34,6 @@
 
 .landing-greet,
 .landing-profession {
-  color: $color-black;
   font-size: 4.4rem;
 
   @include respond(sm) {
@@ -74,6 +79,7 @@
 .landing-illustration {
   width: 70%;
   box-shadow: $box-shadow;
+  border-radius: 5px;
 
   @include respond(xl) {
     width: 60%;

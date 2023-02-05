@@ -17,7 +17,7 @@ export class AboutMeComponent implements OnInit {
       setTimeout(() => {
         this.scrollToElement('about-me-section');
       }, 200);
-    }, 500);
+    }, 700);
   }
 
   public scrollToElement(elementId: string): void {

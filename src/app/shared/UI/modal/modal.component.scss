@@ -1,4 +1,4 @@
-@import '../../../../scss/mixins';
+@use '../../../../scss/abstracts' as *;
 
 .modal {
   position: absolute;
@@ -17,9 +17,10 @@
 .modal-content {
   position: relative;
   padding: 3rem 4rem;
-  background-color: var(--color-surface);
+  background-color: $color-grey;
   border-radius: 5px;
-  box-shadow: 0 0 5px -2px var(--color-blue);
+  width: 40rem;
+  box-shadow: $box-shadow;
 
   @include respond(sm) {
     width: 90%;
@@ -30,7 +31,7 @@ button {
   position: absolute;
   top: 3rem;
   right: 3rem;
-  color: var(--color-text-primary);
+  color: $color-white;
   background-color: transparent;
   border: none;
   font-size: 4rem;

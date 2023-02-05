@@ -1,4 +1,8 @@
-<main class="card">
+<main
+  class="card"
+  [style.background-image]="
+    'url(../../../../assets/images/about-me/' + data.backgroundImage + ')'
+  ">
   <div class="card-left">
     <p class="card-title" data-aos="fade-right" data-aos-duration="1000">
       {{ data.title }} <span class="card-title-span">{{ data.titleSpan }}</span>
@@ -121,7 +125,7 @@
   </div>
   <div class="illustration-wrapper">
     <img
-      [src]="data.imgSrc"
+      [src]="'../../../../assets/images/about-me-page/' + data.imgSrc"
       alt="Illustration"
       class="illustration"
       data-aos="fade-left"

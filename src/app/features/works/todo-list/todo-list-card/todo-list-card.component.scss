@@ -1,25 +1,29 @@
+@use '../../../../../scss/abstracts' as *;
+
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: var(--color-blue-transparent);
-  border: 1px dotted var(--color-blue);
+  color: $color-white;
+  background-color: $color-primary-transparent;
+  box-shadow: $box-shadow;
+  border: 1px dotted $color-grey;
   font-size: 1.6rem;
+  font-weight: 500;
   transition: all 0.3s ease-in;
 }
 
 button {
-  border: none;
   background-color: transparent;
+  border: none;
   font-size: 2rem;
-  color: var(--color-black);
   transition: all 0.3s ease-in;
   cursor: pointer;
 
   &:hover {
-    color: var(--color-text-primary);
+    color: $color-grey;
   }
 
   &:not(:last-child) {
@@ -32,6 +36,7 @@ button {
 }
 
 .selected {
-  background: var(--color-teal-transparent);
-  border: 1px dotted var(--color-teal);
+  color: $color-black;
+  background: $color-secondary-transparent;
+  border: 1px dotted $color-white;
 }

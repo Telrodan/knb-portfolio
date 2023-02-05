@@ -1,4 +1,4 @@
-@import '../../../../scss/mixins';
+@use '../../../../scss/abstracts' as *;
 
 main {
   display: flex;
@@ -6,7 +6,6 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--color-surface);
 
   @include respond(sm) {
     justify-content: flex-start;
@@ -16,7 +15,6 @@ main {
 
 .heading {
   margin-bottom: 2rem;
-  color: var(--color-teal);
   font-size: 5rem;
   letter-spacing: 2px;
   font-family: 'Odibee Sans', cursive;
@@ -28,15 +26,14 @@ main {
   min-height: 70rem;
   background-image: linear-gradient(
       to right bottom,
-      var(--gradient-1),
-      var(--gradient-2)
+      $color-primary-transparent,
+      $color-secondary-transparent
     ),
     url('./../../../../assets/images/todo-list/todo-list-background.png');
   background-position: center center;
   background-size: cover;
-  border: 1px solid var(--color-teal);
   border-radius: 5px;
-  box-shadow: 0 0 25px var(--color-blue-transparent);
+  box-shadow: $box-shadow;
 
   @include respond(sm) {
     flex-direction: column;
@@ -48,8 +45,8 @@ main {
 .container-heading {
   margin: 2rem 0;
   padding-bottom: 1rem;
-  color: var(--color-teal);
-  border-bottom: 1px dashed var(--color-teal);
+  border-bottom: 1px dashed $color-white;
+  color: $color-white;
   font-size: 3rem;
   letter-spacing: 2px;
   font-family: 'Odibee Sans', cursive;
@@ -60,14 +57,14 @@ main {
   position: relative;
   width: 25%;
   padding: 0 1rem;
-  border-right: 1px dashed var(--color-teal);
+  border-right: 1px dashed $color-white;
 
   @include respond(sm) {
     width: 100%;
     padding-bottom: 5.5rem;
     margin-bottom: 2rem;
     border-right: none;
-    border-bottom: 1px solid var(--color-teal);
+    border-bottom: 1px solid $color-white;
   }
 }
 
@@ -96,20 +93,19 @@ main {
   left: 50%;
   display: flex;
   margin-top: auto;
-  border: 1px dotted var(--color-teal);
+  border: 1px solid $color-white;
   transform: translateX(-50%);
 }
 
 .add-form-input {
   padding: 1rem 2rem;
   width: 15rem;
-  color: var(--color-text-primary);
   background-color: transparent;
   border: none;
   font-size: 1.6rem;
 
   &::placeholder {
-    color: var(--color-text-primary);
+    color: $color-black;
   }
 
   &:focus {
@@ -119,8 +115,9 @@ main {
 
 .add-form-button {
   width: 4rem;
-  background-color: var(--color-teal);
+  background-color: $color-primary;
   border: none;
+  border-left: 1px solid $color-white;
   font-size: 2rem;
   cursor: pointer;
 
@@ -130,7 +127,7 @@ main {
   }
 
   fa-icon {
-    color: var(--color-black);
+    color: $color-white;
     z-index: 5;
   }
 }

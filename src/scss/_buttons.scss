@@ -11,12 +11,13 @@
   outline: 2px solid transparent;
   outline-offset: -2px;
   letter-spacing: 0.5px;
-  font-size: 1.8rem;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 2.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
-  @include respond(lg) {
-    font-size: 2rem;
+  @include respond(sm) {
+    font-size: 2.4rem;
   }
 
   &:hover {
@@ -45,12 +46,12 @@
   outline-offset: -2px;
   letter-spacing: 0.5px;
   font-family: 'Odibee Sans', cursive;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
-  @include respond(lg) {
-    font-size: 2rem;
+  @include respond(sm) {
+    font-size: 2.4rem;
   }
 
   &:hover {
@@ -62,10 +63,18 @@
 .secondary-button-dotted {
   display: inline-block;
   padding: 1rem 2rem;
-  color: var(--color-text-primary);
+  color: $color-white;
   background-color: transparent;
-  border: 1px dotted var(--color-blue);
+  letter-spacing: 0.5px;
+  font-family: 'Odibee Sans', cursive;
+  box-shadow: $box-shadow;
+  font-size: 2.2rem;
+  border: 2px dotted $color-secondary;
   cursor: pointer;
+
+  @include respond(sm) {
+    font-size: 2.4rem;
+  }
 }
 
 .underline {
@@ -75,10 +84,6 @@
   font-size: 1.6rem;
   transition: all 0.4s ease;
   cursor: pointer;
-
-  @include respond(sm) {
-    // font-size: 2rem;
-  }
 
   &:before {
     content: '';
@@ -95,6 +100,10 @@
       height: 2px;
       background: var(--color-teal);
     }
+  }
+
+  &:hover {
+    color: $color-white;
   }
 
   &:hover:before {

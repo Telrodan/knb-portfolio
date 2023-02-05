@@ -13,7 +13,7 @@
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
-  color: $color-white;
+  color: $color-secondary;
 }
 
 .spinner:before,
@@ -30,7 +30,7 @@
   animation: 1s spin linear infinite;
 }
 .spinner:after {
-  color: $color-secondary;
+  color: $color-primary;
   transform: rotateY(70deg);
   animation-delay: 0.4s;
 }

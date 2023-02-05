@@ -1,3 +1,5 @@
+@use '../../../../../scss/abstracts' as *;
+
 form {
   display: flex;
   flex-direction: column;
@@ -5,18 +7,17 @@ form {
 
 h1 {
   margin-bottom: 2rem;
-  color: var(--color-teal);
+  color: $color-black;
   font-size: 2.4rem;
-  font-weight: 400;
   text-transform: capitalize;
 }
 
 input {
   margin-bottom: 4rem;
   padding: 1rem 2rem;
-  border: 1px dotted var(--color-teal);
-  color: var(--color-text-primary);
+  border: 2px dotted $color-white;
   background-color: transparent;
+  box-shadow: $box-shadow;
   font-size: 1.6rem;
 
   &:focus {

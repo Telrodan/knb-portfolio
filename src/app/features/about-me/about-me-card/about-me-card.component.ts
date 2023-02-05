@@ -18,6 +18,7 @@ interface CardData {
   titleSpan: string;
   description: string;
   isButton: boolean;
+  backgroundImage: string;
   buttonText: string;
   buttonUrl: string;
   isIcons: boolean;

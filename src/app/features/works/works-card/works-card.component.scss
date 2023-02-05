@@ -6,9 +6,10 @@
   width: 37rem;
   min-height: 70rem;
   padding: 2rem;
-  box-shadow: 0 0 25px var(--color-blue-transparent);
+  box-shadow: $box-shadow;
   border-radius: 5px;
   overflow: hidden;
+  background-color: $color-white-transparent;
 
   @include respond(sm) {
     width: 100%;
@@ -16,17 +17,18 @@
 }
 
 .title {
-  color: var(--color-teal);
   margin-bottom: 2rem;
   font-size: 2.4rem;
 }
 
 .image {
+  border-radius: 5px;
   margin-bottom: 1rem;
 }
 
 .description {
   font-size: 1.4rem;
+  font-weight: 500;
   line-height: 2rem;
   letter-spacing: 0.5px;
 }
@@ -37,17 +39,6 @@
   justify-content: space-between;
 }
 
-.link {
-  font-size: 1.6rem;
-}
-
 .icon {
   margin-right: 5px;
-}
-
-.link-demo {
-  padding: 1rem 2rem;
-  color: var(--color-surface);
-  font-size: 1.6rem;
-  background-color: var(--color-blue);
 }

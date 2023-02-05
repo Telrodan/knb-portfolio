@@ -1,21 +1,6 @@
 @use '../scss/abstracts' as *;
 
 .app-layout {
-  // position: relative;
-  // display: flex;
-  // flex-direction: column;
   max-width: 100vw;
   overflow-x: hidden;
-
-  .app-navbar {
-    // z-index: 5;
-    // width: 100%;
-    // position: fixed;
-  }
-
-  .app-router {
-    // min-height: 100vh;
-    // padding: 8rem 2rem 0;
-    background-color: $color-grey;
-  }
 }

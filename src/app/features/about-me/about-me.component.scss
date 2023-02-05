@@ -2,21 +2,23 @@
 
 .wrapper {
   position: relative;
+  margin-bottom: 20rem;
 }
 
 .scroll-button {
   position: absolute;
   top: 50%;
-  right: 0;
-  padding: 10px;
-  color: var(--color-text-primary);
-  border: 2px dotted var(--color-teal);
-  font-size: 14px;
+  right: 2rem;
+  padding: 1rem;
+  border: 2px dotted $color-secondary;
+  font-size: 1.8rem;
   font-weight: 500;
   text-transform: uppercase;
-  // cursor: pointer;
+  cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: upright;
+  box-shadow: $box-shadow;
+  border-radius: 3px;
   direction: rtl;
 
   @include respond(sm) {

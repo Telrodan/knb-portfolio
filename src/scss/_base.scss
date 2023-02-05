@@ -1,6 +1,8 @@
+@use '../scss/abstracts' as *;
 // HIDE SCROLLBAR
 body {
   max-width: 100vw;
+  background-color: $color-grey;
 }
 
 ::-webkit-scrollbar {

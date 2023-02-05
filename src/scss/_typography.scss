@@ -11,16 +11,19 @@
 // font-family: 'Public Sans', sans-serif;
 
 html {
-  color: var(--color-text-primary);
+  color: $color-black;
   font-size: 10px;
-  font-family: var(--font-family);
+  font-family: $font-family;
   -webkit-font-smoothing: antialiased;
+
+  @include respond(sm) {
+    font-size: 9px;
+  }
 }
 
 // PORTFOLIO
 .primary-heading {
   letter-spacing: 2px;
-  color: var(--color-teal);
   font-size: 4rem;
   font-family: 'Odibee Sans', cursive;
   font-weight: 400;

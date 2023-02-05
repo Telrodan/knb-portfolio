@@ -13,6 +13,6 @@ export class LandingComponent implements OnInit {
   public ngOnInit(): void {
     setTimeout(() => {
       this.isLoading = false;
-    }, 500);
+    }, 700);
   }
 }

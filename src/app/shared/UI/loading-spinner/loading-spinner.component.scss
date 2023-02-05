@@ -1,7 +1,10 @@
+@use '../../../../scss/abstracts' as *;
+
 .loading-spinner {
   width: 100px;
   height: 100px;
-  background-color: var(--color-teal);
+
+  background-color: $color-primary;
   border-radius: 12px;
   animation: loading 2s linear infinite;
   margin: 0 auto;

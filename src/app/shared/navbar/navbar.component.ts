@@ -31,7 +31,7 @@ import { isMobileView } from '../utils/mobile-view-treshold';
     ]),
     trigger('slideInAndOutFromTopAnimation', [
       state('false', style({ top: '0' })),
-      state('true', style({ top: '-100px' })),
+      state('true', style({ top: '-90px' })),
       transition('false => true', animate('0.4s ease-in')),
       transition('true => false', animate('0.4s ease-out'))
     ])
@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
     if (scrollDistance < this.previousScrollDistance) {
       this.isNavbarHidden = false;
     } else {
-      this.isNavbarHidden = window.pageYOffset >= 50 ? true : false;
+      this.isNavbarHidden = window.pageYOffset >= 10 ? true : false;
     }
     this.previousScrollDistance = scrollDistance;
   }

@@ -1,12 +1,20 @@
-@import '../../../../scss/mixins';
+@use '../../../../scss/abstracts' as *;
 
 .card {
   display: flex;
   align-items: center;
   min-height: 100vh;
+  padding: 0 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:nth-child(1) {
+    margin-top: 8rem;
+  }
 
   @include respond(sm) {
     padding-top: 2rem;
+    background-position: 25%;
   }
 
   @include respond(lg) {
@@ -29,24 +37,19 @@
 
 .card-title {
   margin-bottom: 2.5rem;
-  color: var(--color-teal);
+  color: $color-white;
   font-family: 'Odibee Sans', cursive;
   font-size: 6rem;
-
-  &-span {
-    color: var(--color-text-primary);
-  }
 }
 
 .card-description {
-  color: var(--color-text-primary);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 2.6rem;
+  font-weight: 500;
 }
 
 .card-button {
   margin-top: 5rem;
-  font-size: 1.6rem;
 }
 
 .icons-container {
@@ -66,7 +69,7 @@
   justify-content: center;
   width: 7rem;
   margin-bottom: 2rem;
-  color: var(--color-teal);
+  color: $color-secondary;
 
   &:not(:last-child) {
     margin-right: 0.5rem;
@@ -80,8 +83,9 @@
 }
 
 .icon-name {
-  color: var(--color-text-primary);
-  font-size: 1.4rem;
+  color: $color-white;
+  font-weight: 500;
+  font-size: 1.6rem;
 }
 
 .illustration-wrapper {
@@ -96,9 +100,9 @@
 }
 
 .illustration {
-  width: 50%;
-  border-radius: 10px;
-  box-shadow: 0 0 25px var(--color-blue-transparent);
+  width: 70%;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
 
   @include respond(sm) {
     margin-top: 3rem;
