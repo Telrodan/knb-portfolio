@@ -10,7 +10,10 @@
     class="navbar"
     [@slideInAndOutFromLeftAnimation]="isNavbarOpen"
     [ngClass]="isNavbarOpen ? 'navbar--open' : 'navbar--closed'">
-    <button class="close-button" (click)="toggleNavbar()">
+    <button
+      class="close-button"
+      (click)="toggleNavbar()"
+      aria-label="Hamburger">
       <fa-icon [icon]="faXmark"></fa-icon>
     </button>
     <ul class="list">
@@ -53,9 +56,13 @@
       <a
         href="https://www.linkedin.com/in/bence-keresztes-nagy-aba1a024b/"
         target="_blank"
+        aria-label="LinkedIn Icon"
         ><fa-icon [icon]="faLinkedin"></fa-icon
       ></a>
-      <a href="https://github.com/Telrodan" target="_blank"
+      <a
+        href="https://github.com/Telrodan"
+        target="_blank"
+        aria-label="GitHub Icon"
         ><fa-icon [icon]="faGithub"></fa-icon
       ></a>
     </div>

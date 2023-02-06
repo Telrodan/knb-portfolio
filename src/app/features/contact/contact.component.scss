@@ -35,10 +35,15 @@
   margin-right: 5rem;
   box-shadow: $box-shadow;
   border-radius: 5px;
+  background-image: url('../../../assets/images/contact-page/contact-illustration-01.jpg');
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1 / 1;
 
   @include respond(sm) {
     width: 80%;
     margin: 0 auto 3rem;
+    background-image: url('../../../assets/images/contact-page/contact-illustration-01-mobile.jpg');
   }
 }
 

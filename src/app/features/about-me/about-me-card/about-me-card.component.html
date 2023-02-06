@@ -1,14 +1,17 @@
 <main
   class="card"
-  [style.background-image]="
-    'url(../../../../assets/images/about-me-page/' + data.backgroundImage + ')'
-  ">
+  [ngStyle]="{
+    'background-image':
+      'url(../../../../assets/images/about-me-page/' +
+      data.backgroundImage +
+      ')'
+  }">
   <div class="card-left">
     <p
       class="card-title heading-primary"
       data-aos="fade-right"
       data-aos-duration="1000">
-      {{ data.title }} <span class="card-title-span">{{ data.titleSpan }}</span>
+      {{ data.title }}
     </p>
     <p
       class="card-description"
@@ -23,8 +26,8 @@
       data-aos-duration="300"
       data-aos-delay="900"
       *ngIf="data.isButton"
-      [routerLink]="data.buttonUrl"
-      >{{ data.buttonText }}</a
+      routerLink="/works"
+      >Works</a
     >
     <ul *ngIf="data.isIcons" class="icons-container">
       <li
@@ -95,12 +98,16 @@
     </ul>
   </div>
   <div class="illustration-wrapper">
-    <img
-      [src]="'../../../../assets/images/about-me-page/' + data.imgSrc"
-      alt="Illustration"
+    <div
       class="illustration"
+      [ngStyle]="{
+        'background-image':
+          'url(../../../../assets/images/about-me-page/' +
+          (isMobileView ? data.imgSrcMobile : data.imgSrc) +
+          ')'
+      }"
       data-aos="fade-left"
       data-aos-duration="1000"
-      data-aos-delay="600" />
+      data-aos-delay="600"></div>
   </div>
 </main>

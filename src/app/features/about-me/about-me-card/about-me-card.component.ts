@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {
   faHtml5,
@@ -15,14 +15,12 @@ interface CardData {
   section: string;
   scroll: string;
   title: string;
-  titleSpan: string;
   description: string;
   isButton: boolean;
-  backgroundImage: string;
-  buttonText: string;
-  buttonUrl: string;
   isIcons: boolean;
+  backgroundImage: string;
   imgSrc: string;
+  imgSrcMobile: string;
 }
 
 @Component({
@@ -30,8 +28,9 @@ interface CardData {
   templateUrl: './about-me-card.component.html',
   styleUrls: ['./about-me-card.component.scss']
 })
-export class AboutMeCardComponent {
+export class AboutMeCardComponent implements OnInit {
   @Input() public data: CardData;
+  public isMobileView: boolean;
 
   public faHtml5 = faHtml5;
   public faCss3Alt = faCss3Alt;
@@ -41,4 +40,13 @@ export class AboutMeCardComponent {
   public faGit = faGit;
   public faGithub = faGithub;
   public faNodeJs = faNodeJs;
+
+  public ngOnInit(): void {
+    this.checkIsMobileView();
+    console.log(this.isMobileView);
+  }
+
+  public checkIsMobileView(): void {
+    this.isMobileView = window.innerWidth < 576;
+  }
 }
