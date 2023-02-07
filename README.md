@@ -1,9 +1,8 @@
 # KNB-Portfolio Website
 
-This is a portfolio website showcasing my personal and professional projects, skills and experiences.
+This is a portfolio website showcasing my personal projects, skills and experiences.
 
 ## Features
-A clean and modern design
 An about section that provides a brief overview of who I am and what I do
 A works section where I display my projects, along with screenshots and descriptions
 A contact section that provides multiple ways to get in touch with me
@@ -12,7 +11,10 @@ A contact section that provides multiple ways to get in touch with me
 HTML
 SCSS
 JavaScript
+MongoDB
+Express
 Angular
+NodeJs
 
 ## How to run locally
 Clone the repository to your local machine
