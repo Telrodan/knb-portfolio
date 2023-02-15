@@ -4,7 +4,9 @@
     selected: cardData === selectedList,
     checked: cardData?.checked
   }">
-  <p class="card-title">{{ cardData.title }}</p>
+  <p class="card-title">
+    {{ cardType === 'list' ? cardData.listName : cardData.taskName }}
+  </p>
   <div class="controls-container">
     <button (click)="onCheckTask(cardData)" *ngIf="cardType === 'task'">
       <fa-icon [icon]="faCheck"></fa-icon>

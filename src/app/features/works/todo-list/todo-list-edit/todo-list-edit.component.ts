@@ -1,8 +1,15 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TodoList } from 'src/app/core/models/todo-list.model';
+import { TodoTask } from 'src/app/core/models/todo-task.model';
 
 import { ModalService } from 'src/app/core/services/modal.service';
 import { TodoListService } from 'src/app/core/services/works/todo-list.service';
+
+interface EditedItem {
+  cardType: string;
+  data: any;
+}
 
 @Component({
   selector: 'knb-portfolio-todo-list-edit',
@@ -11,7 +18,7 @@ import { TodoListService } from 'src/app/core/services/works/todo-list.service';
 })
 export class TodoListEditComponent implements OnInit, OnChanges {
   public editForm: FormGroup;
-  @Input() public editedItem: any;
+  @Input() public editedItem: EditedItem;
 
   constructor(
     public modalService: ModalService,
@@ -20,35 +27,39 @@ export class TodoListEditComponent implements OnInit, OnChanges {
 
   public ngOnInit(): void {
     this.editForm = new FormGroup({
-      editedName: new FormControl('null', Validators.required)
+      editedName: new FormControl('', Validators.required)
     });
   }
 
   public ngOnChanges(): void {
     if (this.editedItem) {
+      const editedItemName =
+        this.editedItem.cardType === 'list'
+          ? this.editedItem.data.listName
+          : this.editedItem.data.taskName;
       this.editForm.patchValue({
-        editedName: this.editedItem.data.title
+        editedName: editedItemName
       });
     }
   }
 
   public editItem(): void {
-    if (this.editForm.dirty) {
+    if (this.editForm.valid || this.editForm.dirty) {
       if (this.editedItem.cardType === 'list') {
-        const list = {
+        const list: TodoList = {
           ...this.editedItem.data,
-          title: this.editForm.value.editedName
+          listName: this.editForm.value.editedName
         };
         this.todoListService.updateList(list);
       } else {
-        const task = {
+        const task: TodoTask = {
           ...this.editedItem.data,
-          title: this.editForm.value.editedName
+          taskName: this.editForm.value.editedName
         };
         this.todoListService.updateTask(task);
       }
     }
-    this.editForm.reset();
+    // this.editForm.reset();
     this.modalService.toggleModal();
   }
 }

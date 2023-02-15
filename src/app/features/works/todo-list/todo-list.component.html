@@ -5,10 +5,10 @@
       <h2 class="container-heading">Lists</h2>
       <div
         class="wrapper"
-        [@fadeInAnimation]
         (click)="selectList(todoList)"
         *ngFor="let todoList of todoLists">
         <knb-portfolio-todo-list-card
+          [@fadeInAnimation]
           (editItem)="onEditItemEvent($event)"
           cardType="list"
           [selectedList]="selectedList"
@@ -31,17 +31,15 @@
     </div>
     <div class="container-right">
       <h2 class="container-heading">Tasks</h2>
-      <p class="no-category" *ngIf="!todoLists.length">
+      <p class="no-category" *ngIf="!todoLists.length && selectedList">
         Lists not yet added? Create one first.
       </p>
-      <div
-        class="wrapper"
-        [@fadeInAnimation]
-        *ngIf="todoLists.length && selectedList">
+      <div class="wrapper" *ngIf="todoLists.length && selectedList">
         <knb-portfolio-todo-list-card
-          *ngFor="let task of selectedList.tasks"
+          [@fadeInAnimation]
           (editItem)="onEditItemEvent($event)"
           cardType="task"
+          *ngFor="let task of selectedList.tasks"
           [cardData]="task"></knb-portfolio-todo-list-card>
       </div>
       <form

@@ -13,9 +13,10 @@ import {
   faPenToSquare
 } from '@fortawesome/free-solid-svg-icons';
 
-import { Task, TodoList } from 'src/app/core/models/todo-list.model';
+import { TodoList } from 'src/app/core/models/todo-list.model';
 import { ConfirmationModalService } from 'src/app/core/services/confirmation-modal.service';
 import { TodoListService } from 'src/app/core/services/works/todo-list.service';
+import { TodoTask } from 'src/app/core/models/todo-task.model';
 
 @Component({
   selector: 'knb-portfolio-todo-list-card',
@@ -23,7 +24,6 @@ import { TodoListService } from 'src/app/core/services/works/todo-list.service';
   styleUrls: ['./todo-list-card.component.scss']
 })
 export class TodoListCardComponent implements OnDestroy {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   @Input() public cardData: any;
   @Input() public cardType: 'task' | 'list';
   @Input() public selectedList: TodoList;
@@ -44,7 +44,6 @@ export class TodoListCardComponent implements OnDestroy {
     this.destroy.complete();
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async onDeleteItem(data: any): Promise<void> {
     if (this.cardType === 'list') {
       const confirmed = await this.confirmationModalService.confirmAction(
@@ -67,7 +66,7 @@ export class TodoListCardComponent implements OnDestroy {
     }
   }
 
-  public onCheckTask(task: Task): void {
+  public onCheckTask(task: TodoTask): void {
     const updatedTask = {
       ...task,
       checked: !task.checked
@@ -75,7 +74,7 @@ export class TodoListCardComponent implements OnDestroy {
     this.todoListService.updateTask(updatedTask);
   }
 
-  public onEditItem(data: TodoList | Task, cardType: string): void {
+  public onEditItem(data: TodoList | TodoTask, cardType: string): void {
     this.editItem.emit({ data, cardType });
   }
 }

@@ -9,7 +9,7 @@ import { ApiService } from './api.service';
 export class EmailService {
   constructor(private apiService: ApiService) {}
 
-  public sendMessage(message: Message) {
-    return this.apiService.post$('send-mail', message);
+  public sendEmail$(message: Message) {
+    return this.apiService.post$('emails/send-email', message);
   }
 }

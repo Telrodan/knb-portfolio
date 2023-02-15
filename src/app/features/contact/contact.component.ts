@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
         ...this.contactForm.value,
         sentTime: new Date().toString()
       };
-      this.emailService.sendMessage(message).subscribe(() => {
+      this.emailService.sendEmail$(message).subscribe(() => {
         this.isMessageSent = true;
         this.isSending = false;
       });
