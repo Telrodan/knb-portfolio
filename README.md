@@ -1,27 +1,30 @@
-# KnbPortfolio
+# KNB-Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This is a portfolio website showcasing my personal projects, skills and experiences.
 
-## Development server
+## Features
+An about section that provides a brief overview of who I am and what I do
+A works section where I display my projects, along with screenshots and descriptions
+A contact section that provides multiple ways to get in touch with me
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies
+HTML
+SCSS
+JavaScript
+MongoDB
+Express
+Angular
+NodeJs
 
-## Code scaffolding
+## How to run locally
+Clone the repository to your local machine
+Copy code
+git clone https://github.com/Telrodan/knb-portfolio.git
+npm i
+ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Deployment
+This portfolio website is deployed on https://knb-portfolio.hu/
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Contact
+If you have any questions or feedback, feel free to reach out to me at keresztesnagybence@gmail.com
