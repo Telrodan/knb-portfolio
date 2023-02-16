@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faDisplay } from '@fortawesome/free-solid-svg-icons';
 
-import { Work } from 'src/app/core/models/works.model';
+import { Work } from 'src/app/core/models/work.model';
 
 @Component({
   selector: 'knb-portfolio-works-card',

@@ -43,7 +43,6 @@ export class AboutMeCardComponent implements OnInit {
 
   public ngOnInit(): void {
     this.checkIsMobileView();
-    console.log(this.isMobileView);
   }
 
   public checkIsMobileView(): void {

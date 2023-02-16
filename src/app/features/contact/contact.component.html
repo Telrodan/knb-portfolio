@@ -1,4 +1,4 @@
-<main class="contact-me" *ngIf="!isLoading">
+<main class="contact-me">
   <h1
     class="heading-primary heading"
     data-aos="fade-right"
@@ -43,7 +43,7 @@
         class="form"
         [formGroup]="contactForm"
         (submit)="onSendMessage()"
-        *ngIf="!isSending && !isMessageSent">
+        *ngIf="!isMessageSent">
         <div class="form-group">
           <input
             class="form-input"
@@ -91,9 +91,6 @@
           <fa-icon [icon]="faPaperPlane"></fa-icon> Send message
         </button>
       </form>
-      <div class="loading-spinner-container" *ngIf="isSending">
-        <knb-portfolio-loading-spinner></knb-portfolio-loading-spinner>
-      </div>
 
       <h1
         class="message-sent heading-primary"
@@ -106,4 +103,3 @@
     </div>
   </div>
 </main>
-<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

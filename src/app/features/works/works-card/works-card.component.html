@@ -1,20 +1,20 @@
 <article class="card">
-  <h1 class="title heading-secondary">{{ work.projectTitle }}</h1>
+  <h1 class="title heading-secondary">{{ work.title }}</h1>
   <img
     class="image"
-    [src]="'../../../../assets/images/works/' + work.projectImage"
+    [src]="'../../../../assets/images/works/' + work.image"
     alt="Work image" />
   <p class="description">
-    {{ work.projectDescription }}
+    {{ work.description }}
   </p>
   <div class="links">
-    <a [href]="work.projectCode" target="_blank" class="link button-primary"
+    <a [href]="work.code" target="_blank" class="link button-primary"
       ><fa-icon class="icon" [icon]="faGithub"></fa-icon>Source code</a
     >
     <a
       class="link button-secondary"
       routerLink="demo/todo-list"
-      [routerLink]="work.projectDemo"
+      [routerLink]="work.demo"
       ><fa-icon class="icon" [icon]="faDisplay"></fa-icon>Live demo</a
     >
   </div>
