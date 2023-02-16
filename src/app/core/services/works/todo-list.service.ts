@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { forkJoin, map, Observable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, forkJoin, map, Observable, Subject, tap } from 'rxjs';
 
 import { ApiService } from '../api.service';
 import { TodoList } from '../../models/todo-list.model';
@@ -11,20 +11,20 @@ import { TodoTask } from '../../models/todo-task.model';
 })
 export class TodoListService {
   public todoLists: TodoList[];
+  public selectedList: TodoList = null;
+  private selectedListUpdated = new BehaviorSubject<TodoList>(
+    this.selectedList
+  );
   private listsUpdated = new Subject<TodoList[]>();
-  private editedItemUpdated = new Subject<{
-    data: TodoList | TodoTask;
-    cardType: string;
-  }>();
 
   constructor(private apiService: ApiService) {}
 
-  public getListUpdatedListener$() {
-    return this.listsUpdated.asObservable();
+  public getSelectListUpdatedListener$(): Observable<TodoList> {
+    return this.selectedListUpdated.asObservable();
   }
 
-  public getEditedItemUpdatedListener$() {
-    return this.editedItemUpdated.asObservable();
+  public getListUpdatedListener$(): Observable<TodoList[]> {
+    return this.listsUpdated.asObservable();
   }
 
   public addList(listName: string): void {
@@ -34,6 +34,7 @@ export class TodoListService {
         tap((listDTO) => {
           const list = TodoList.fromDTO(listDTO.list);
           this.todoLists.push(list);
+          this.selectedListUpdated.next(list);
           this.listsUpdated.next([...this.todoLists]);
         })
       )
@@ -61,22 +62,22 @@ export class TodoListService {
             return list;
           });
           this.todoLists = listsWithTasks;
+          this.selectedListUpdated.next(this.todoLists[0]);
           this.listsUpdated.next([...this.todoLists]);
         })
       )
       .subscribe();
   }
 
-  public updateList(updatedList: TodoList): void {
-    console.log(updatedList);
+  public updateList(list: TodoList): void {
     this.apiService
-      .put$('todo/list', updatedList.id, updatedList)
+      .put$('todo/list', list.id, list)
       .pipe(
         tap(() => {
           const oldListIndex = this.todoLists.findIndex(
-            (list) => list.id === updatedList.id
+            (list) => list.id === list.id
           );
-          this.todoLists[oldListIndex] = updatedList;
+          this.todoLists[oldListIndex] = list;
           this.listsUpdated.next([...this.todoLists]);
         })
       )
@@ -95,6 +96,7 @@ export class TodoListService {
             this.deleteTask(task.id, task.listId);
           });
           this.todoLists.splice(listIndex, 1);
+          this.selectedListUpdated.next(this.todoLists[0]);
           this.listsUpdated.next([...this.todoLists]);
         })
       )
@@ -122,18 +124,18 @@ export class TodoListService {
       .subscribe();
   }
 
-  public updateTask(updatedTask: TodoTask): void {
+  public updateTask(task: TodoTask): void {
     this.apiService
-      .put$('todo/task', updatedTask.id, updatedTask)
+      .put$('todo/task', task.id, task)
       .pipe(
         tap(() => {
           const listIndex = this.todoLists.findIndex(
-            (list) => list.id === updatedTask.listId
+            (list) => list.id === task.listId
           );
           const oldTaskIndex = this.todoLists[listIndex].tasks.findIndex(
-            (task) => task.id === updatedTask.id
+            (task) => task.id === task.id
           );
-          this.todoLists[listIndex].tasks[oldTaskIndex] = updatedTask;
+          this.todoLists[listIndex].tasks[oldTaskIndex] = task;
           this.listsUpdated.next([...this.todoLists]);
         })
       )

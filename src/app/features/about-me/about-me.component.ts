@@ -8,16 +8,12 @@ import { data } from './ABOUT_ME_DATA';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-  public isLoading = true;
   public cardData = data;
 
   public ngOnInit(): void {
     setTimeout(() => {
-      this.isLoading = false;
-      setTimeout(() => {
-        this.scrollToElement('about-me-section');
-      }, 200);
-    }, 700);
+      this.scrollToElement('about-me-section');
+    }, 200);
   }
 
   public scrollToElement(elementId: string): void {

@@ -10,7 +10,7 @@
   color: $color-white;
   background-color: $color-primary-transparent;
   box-shadow: $box-shadow;
-  border: 1px dotted $color-grey;
+  border: 1px solid $color-grey;
   font-size: 1.6rem;
   font-weight: 500;
   transition: all 0.3s ease-in;
@@ -20,11 +20,17 @@ button {
   background-color: transparent;
   border: none;
   font-size: 2rem;
+  color: $color-primary;
   transition: all 0.3s ease-in;
   cursor: pointer;
 
-  &:hover {
-    color: $color-grey;
+  fa-icon {
+    color: $color-secondary;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: $color-white;
+    }
   }
 
   &:not(:last-child) {
@@ -33,11 +39,14 @@ button {
 }
 
 .checked {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .selected {
-  color: $color-black;
+  color: $color-primary;
   background: $color-secondary-transparent;
-  border: 1px dotted $color-white;
+
+  fa-icon {
+    color: $color-primary;
+  }
 }

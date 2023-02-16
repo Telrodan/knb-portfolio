@@ -1,6 +1,9 @@
 <div class="app-layout">
   <knb-portfolio-navbar [isDemoMode]="isDemoMode"></knb-portfolio-navbar>
-  <router-outlet></router-outlet>
+  <div class="app-router">
+    <router-outlet></router-outlet>
+  </div>
   <knb-portfolio-footer [isDemoMode]="isDemoMode"></knb-portfolio-footer>
-  <knb-portfolio-confirmation-modal></knb-portfolio-confirmation-modal>
 </div>
+<knb-portfolio-spinner></knb-portfolio-spinner>
+<knb-portfolio-confirmation-modal></knb-portfolio-confirmation-modal>

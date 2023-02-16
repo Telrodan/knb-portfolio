@@ -1,4 +1,4 @@
-<main *ngIf="!isLoading">
+<main *ngIf="todoLists">
   <h1 class="heading">Task manager</h1>
   <div class="container">
     <div class="container-left">
@@ -51,7 +51,7 @@
           formControlName="taskName"
           type="text"
           class="add-form-input"
-          placeholder="Add list..." />
+          placeholder="Add task..." />
         <button
           class="add-form-button"
           type="submit"
@@ -66,4 +66,3 @@
   <knb-portfolio-todo-list-edit
     [editedItem]="editedItem"></knb-portfolio-todo-list-edit>
 </knb-portfolio-modal>
-<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

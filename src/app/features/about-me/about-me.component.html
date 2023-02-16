@@ -1,4 +1,4 @@
-<div class="about-me" *ngIf="!isLoading">
+<div class="about-me">
   <div class="wrapper" [id]="card.section" *ngFor="let card of cardData">
     <knb-portfolio-about-me-card [data]="card"></knb-portfolio-about-me-card>
     <a
@@ -11,4 +11,3 @@
     </a>
   </div>
 </div>
-<knb-portfolio-spinner *ngIf="isLoading"></knb-portfolio-spinner>

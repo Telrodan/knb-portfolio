@@ -3,10 +3,11 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
+  OnInit,
   Output
 } from '@angular/core';
 
-import { Subject } from 'rxjs';
+import { Subject, tap } from 'rxjs';
 import {
   faTrash,
   faCheck,
@@ -23,7 +24,7 @@ import { TodoTask } from 'src/app/core/models/todo-task.model';
   templateUrl: './todo-list-card.component.html',
   styleUrls: ['./todo-list-card.component.scss']
 })
-export class TodoListCardComponent implements OnDestroy {
+export class TodoListCardComponent implements OnInit, OnDestroy {
   @Input() public cardData: any;
   @Input() public cardType: 'task' | 'list';
   @Input() public selectedList: TodoList;
@@ -38,6 +39,17 @@ export class TodoListCardComponent implements OnDestroy {
     private todoListService: TodoListService,
     private confirmationModalService: ConfirmationModalService
   ) {}
+
+  public ngOnInit(): void {
+    this.todoListService
+      .getSelectListUpdatedListener$()
+      .pipe(
+        tap((selectedList) => {
+          this.selectedList = selectedList;
+        })
+      )
+      .subscribe();
+  }
 
   public ngOnDestroy(): void {
     this.destroy.next(true);

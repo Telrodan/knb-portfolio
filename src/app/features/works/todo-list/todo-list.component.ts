@@ -30,12 +30,11 @@ import { ModalService } from 'src/app/core/services/modal.service';
 })
 export class TodoListComponent implements OnInit, OnDestroy {
   @ViewChild('editInput') public editInput: ElementRef;
-  public todoLists: TodoList[];
-  public editedItem: any;
-  public selectedList: TodoList;
   public addListForm: FormGroup;
   public addTaskForm: FormGroup;
-  public isLoading = true;
+  public todoLists: TodoList[];
+  public selectedList: TodoList;
+  public editedItem: any;
   public faPlus = faPlus;
   private destroy = new Subject();
 
@@ -52,13 +51,20 @@ export class TodoListComponent implements OnInit, OnDestroy {
       .pipe(
         tap((todoLists) => {
           this.todoLists = todoLists;
-          if (!this.selectedList) this.selectedList = this.todoLists[0];
         }),
         takeUntil(this.destroy)
       )
-      .subscribe(() => {
-        this.isLoading = false;
-      });
+      .subscribe();
+
+    this.todoListService
+      .getSelectListUpdatedListener$()
+      .pipe(
+        tap((selectedList) => {
+          this.selectedList = selectedList;
+        }),
+        takeUntil(this.destroy)
+      )
+      .subscribe();
   }
 
   public ngOnDestroy(): void {

@@ -89,19 +89,22 @@ main {
   left: 50%;
   display: flex;
   margin-top: auto;
-  border: 1px solid $color-white;
+  border: 2px solid $color-primary;
   transform: translateX(-50%);
+
+  box-shadow: $box-shadow;
 }
 
 .add-form-input {
   padding: 1rem 2rem;
   width: 15rem;
-  background-color: transparent;
+  color: $color-white;
+  background-color: $color-tertiary-transparent;
   border: none;
   font-size: 1.6rem;
 
   &::placeholder {
-    color: $color-black;
+    color: $color-white;
   }
 
   &:focus {
@@ -113,7 +116,7 @@ main {
   width: 4rem;
   background-color: $color-primary;
   border: none;
-  border-left: 1px solid $color-white;
+  border-left: 1px solid $color-primary;
   font-size: 2rem;
   cursor: pointer;
 
