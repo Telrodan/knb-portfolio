@@ -26,7 +26,6 @@ export class HTTPInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       tap(() => {
-        console.log('starting spinner');
         this.spinnerService.startSpinner();
       }),
       catchError((error: HttpErrorResponse) => {

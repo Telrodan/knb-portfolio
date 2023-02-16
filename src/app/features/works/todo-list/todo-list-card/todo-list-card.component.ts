@@ -79,10 +79,12 @@ export class TodoListCardComponent implements OnInit, OnDestroy {
   }
 
   public onCheckTask(task: TodoTask): void {
+    console.log(task);
     const updatedTask = {
       ...task,
       checked: !task.checked
     };
+    console.log(updatedTask);
     this.todoListService.updateTask(updatedTask);
   }
 

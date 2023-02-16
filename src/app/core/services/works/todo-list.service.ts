@@ -124,18 +124,18 @@ export class TodoListService {
       .subscribe();
   }
 
-  public updateTask(task: TodoTask): void {
+  public updateTask(updatedTask: TodoTask): void {
     this.apiService
-      .put$('todo/task', task.id, task)
+      .put$('todo/task', updatedTask.id, updatedTask)
       .pipe(
         tap(() => {
           const listIndex = this.todoLists.findIndex(
-            (list) => list.id === task.listId
+            (list) => list.id === updatedTask.listId
           );
           const oldTaskIndex = this.todoLists[listIndex].tasks.findIndex(
-            (task) => task.id === task.id
+            (task) => task.id === updatedTask.id
           );
-          this.todoLists[listIndex].tasks[oldTaskIndex] = task;
+          this.todoLists[listIndex].tasks[oldTaskIndex] = updatedTask;
           this.listsUpdated.next([...this.todoLists]);
         })
       )
